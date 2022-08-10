@@ -63,7 +63,7 @@ class ProyectosController extends Controller
         $contract = Contract::create([
             'subject'           =>  'Desarrollo de software',
             'description'       =>  $request['description'],
-            'initiated_by'      =>  'Juan Carlos Monreal Romero',
+            'initiated_by'      =>  'Oscar Esteban Infante Gonzalez',
             'start_date'        =>  $request['start_date'],
             'end_date'          =>  $request['end_date'],
             'status_id'         =>  1,
