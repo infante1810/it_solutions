@@ -32,22 +32,22 @@ class UserSeeder extends Seeder
          */  
         User::factory()->count(16)->create(
             new Sequence(
-                ['name' => 'JosueP',    'email' => '1930168@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AxelA',     'email' => '1930204@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'JuanC',     'email' => '1930345@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'JordyL',    'email' => '1930136@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AnaG',      'email' => '1930257@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'KarlaY',    'email' => '1930030@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AldoP',     'email' => '1930329@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AdairE',    'email' => '1930441@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'LeoA',      'email' => '1930147@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'MariL',     'email' => '1930140@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'DianaG',    'email' => '1930012@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'FannyV',    'email' => '1930611@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'CarlosF',   'email' => '1930165@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AmarisA',   'email' => '1930011@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'AndreaJ',   'email' => '1930427@upv.edu.mx', 'password' => Hash::make('password')],
-                ['name' => 'JuanN',     'email' => '1930536@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Oscar',    'email' => 'Oscar@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Esteban',   'email' => 'Esteban@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Sandra',    'email' => 'Sandra@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Estefania',    'email' => 'Estefania@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Uriel',      'email' => 'Uriel@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Anibal',    'email' => 'Anibal@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Jesus',     'email' => 'Jesus@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Usuario1',    'email' => '1930441@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario2',      'email' => '1930147@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario3',     'email' => '1930140@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario4',    'email' => '1930012@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario5',    'email' => '1930611@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario6',   'email' => '1930165@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario7',   'email' => '1930011@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario8',   'email' => '1930427@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Usuario9',     'email' => '1930536@upv.edu.mx', 'password' => Hash::make('password')],
             )
         );
         /**
