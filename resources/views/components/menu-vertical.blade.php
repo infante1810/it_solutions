@@ -2,8 +2,8 @@
 <aside class="app-sidebar">
 	<div class="app-sidebar__logo">
 		<a class="header-brand" href="{{route('home')}}">
-			<img src="{{ asset('images/logoExtendido.png') }}" class="header-brand-img dark-logo" alt="Banquetes Cristy">
-            <img src="{{ asset('images/logo.png') }}" class="header-brand-img mobile-logo" alt="Banquetes Cristy">
+			<img src="{{ asset('images/logoExtendido.png') }}" class="header-brand-img dark-logo" alt="BBVA">
+            <img src="{{ asset('images/logo.png') }}" class="header-brand-img mobile-logo" alt="BBVA">
 		</a>
 	</div>
 	<div class="app-sidebar3">
