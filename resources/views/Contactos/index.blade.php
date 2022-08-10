@@ -26,7 +26,7 @@
                             </div>
                             <div>
                                 <div class="row fs-4 primary-font">Ing. {{$contacto->profile->first_name}}</div>
-                                <div class="row text-muted">Encargada del area RRHH</div>
+                                <div class="row text-muted">Encargad@ del area RRHH</div>
                                 <div class="row">{{$contacto->email}}</div>
                                 <div class="row">{{$contacto->profile->phone_number}}</div>  
                             </div>
