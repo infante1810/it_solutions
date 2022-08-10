@@ -20,10 +20,8 @@
 @section('content')
     <div class="container" style="position: relative; margin-top: 30px">
             <div class="row">
-                <div class="col-8  pt-5" style="background: #EFEFBB;
-                    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
-                    background: linear-gradient(to right, #D4D3DD, #EFEFBB);">
-                    <img src="{{asset('images/login.svg')}}" alt="logo" class="mx-auto d-block" id="logo_izq" style="width: 65%;">
+                <div class="col-8  pt-5" style="background-image:url({{asset('images/login.jpg')}});">
+                    <!-- <img src="{{asset('images/loginn.svg')}}" alt="logo" class="mx-auto d-block" id="logo_izq" style="width: 65%;"> -->
                 </div>
 
 
