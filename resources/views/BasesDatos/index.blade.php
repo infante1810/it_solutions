@@ -32,7 +32,7 @@
                     <table class="table  table-vcenter text-wrap table-bordered border-bottom dt" id="project-list">
                         <thead>
                             <tr>
-                                <th class="border-bottom-0">Nombre de la tabla</th>
+                                <th class="border-bottom-0">Recursos</th>
                                 <th class="border-bottom-0">Descripción</th>
                                 <th class="border-bottom-0">Acceso Directo</th> 
                             </tr>
@@ -42,12 +42,14 @@
                                 <td>
                                     <div class="d-flex">
                                         <div class="mr-3 mt-0 mt-sm-1 d-block">
+                                            <!--<h6 class="mb-1 fs-14">Empleados</h6>-->
                                             <h6 class="mb-1 fs-14">Empleados</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td width="350px">
-                                    <span>Se muestran los datos de los empleados de la empresa</span>
+                                    <!--<span>Se muestran los datos de los empleados de la empresa</span>-->
+                                    <span>$20,000.00</span>
                                 </td>
                                 <td>
                                     <!--Aqui lleva el link directo a cada tabla en la BD-->
