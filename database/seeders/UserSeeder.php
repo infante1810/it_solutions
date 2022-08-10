@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
          * En el primero, se crea el usuario con el nombre JosueP, email correspondiente
          * y una contraseña, los demas campos los selecciona del factory
          */  
-        User::factory()->count(16)->create(
+        User::factory()->count(17)->create(
             new Sequence(
                 ['name' => 'JosueP',    'email' => '1930168@upv.edu.mx', 'password' => Hash::make('password')],
                 ['name' => 'AxelA',     'email' => '1930204@upv.edu.mx', 'password' => Hash::make('password')],
@@ -48,13 +48,14 @@ class UserSeeder extends Seeder
                 ['name' => 'AmarisA',   'email' => '1930011@upv.edu.mx', 'password' => Hash::make('password')],
                 ['name' => 'AndreaJ',   'email' => '1930427@upv.edu.mx', 'password' => Hash::make('password')],
                 ['name' => 'JuanN',     'email' => '1930536@upv.edu.mx', 'password' => Hash::make('password')],
+                ['name' => 'Esteban',     'email' => '2010008@upv.edu.mx', 'password' => Hash::make('password')],
             )
         );
         /**
          * Estos de aca som los perfiles asociados a los usuarios, donde esta la información
          * La combinación parcial de estas 2 tablas serían los empleados
          */
-        Profile::factory()->count(16)->create(
+        Profile::factory()->count(17)->create(
             new Sequence(
                 [
                     'first_name'            =>  'Josue Eliseo',
@@ -182,6 +183,14 @@ class UserSeeder extends Seeder
                     'maternal_last_name'    =>  'Gallardo',
                     'url_image'             =>  'https://via.placeholder.com/800x600.png/00aaee/000000?text=JN',
                     'user_id'               =>  '16',
+                    'age'                   =>  '20',
+                ],
+                [
+                    'first_name'            =>  'Esteban',
+                    'paternal_last_name'    =>  'Infante',
+                    'maternal_last_name'    =>  'Gonzalez',
+                    'url_image'             =>  'https://via.placeholder.com/800x600.png/00aaee/000000?text=EI',
+                    'user_id'               =>  '17',
                     'age'                   =>  '20',
                 ],
             )
