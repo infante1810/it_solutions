@@ -10,7 +10,7 @@
         <!--Favicon -->
 		<link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon"/>
 		<!-- Title -->
-		<title>IT Solutions</title>
+		<title>BBVA</title>
 	</head>
     <style>
         *{
@@ -34,8 +34,8 @@
                         
                             <p><br>Y EN CALIDAD DE DESARROLLADOR:</p>
                         
-                            <p style="padding-left: 30px;"><strong><span id="span_id_pm_b_0">IT Solutions</span></strong>, persona moral que se encuentra debidamente constituida</p>
-                            <p style="padding-left: 30px;">Actuando <strong><span id="span_id_pm_b_0">IT Solutions</span></strong> en este acto a través de: <span id="span_id_rl_pm_b_0_rl_1">Juan Carlos Monreal Romero</span>, persona mayor de edad que cuenta con las facultades suficientes y necesarias para suscribir el presente contrato.</p>
+                            <p style="padding-left: 30px;"><strong><span id="span_id_pm_b_0">BBVA</span></strong>, persona moral que se encuentra debidamente constituida</p>
+                            <p style="padding-left: 30px;">Actuando <strong><span id="span_id_pm_b_0">BBVA</span></strong> en este acto a través de: <span id="span_id_rl_pm_b_0_rl_1">Oscar Esteban Infante Gonzalez</span>, persona mayor de edad que cuenta con las facultades suficientes y necesarias para suscribir el presente contrato.</p>
                         
                             <p><br>QUIENES SE RECONOCEN EXPRESA Y RECÍPROCAMENTE CON CAPACIDAD PLENA PARA OBLIGARSE, Y PARA TAL EFECTO, LA PRIMERA DE ELLAS SERÁ IDENTIFICADA COMO EL "CLIENTE" Y LA SEGUNDA DE ELLAS SERÁ IDENTIFICADA COMO EL "DESARROLLADOR"; ADEMÁS SE HARÁ REFERENCIA A ELLAS DE MANERA CONJUNTA COMO "LAS PARTES"; EN ESTE SENTIDO, LAS PARTES MANIFIESTAN EN PRIMER LUGAR LAS SIGUIENTES:</p>
 
@@ -57,7 +57,7 @@
                             <p><br><strong>Cláusula primera. Objeto del contrato.</strong></p>
                             <p>Mediante el presente contrato EL CLIENTE encomienda AL DESARROLLADOR y éste se obliga a diseñar, estructurar y codificar el Software   de acuerdo al presupuesto negociado   entre las Partes de forma previa a la firma del presente contrato y cuya titularidad corresponderá en su integridad AL CLIENTE.</p>
                             <p>  EL DESARROLLADOR diseñará y codificará el Software siguiendo lo establecido en esta cláusula, así como lo recogido en el propio contrato y en todos sus Anexos.</p>
-                            <p>El desarrollo del Software estará a cargo de: <span id="span_id_persona_encargada_del_software">Juan Carlos Monreal Romero</span>.</p>
+                            <p>El desarrollo del Software estará a cargo de: <span id="span_id_persona_encargada_del_software">Oscar Esteban Infante Gonzalez</span>.</p>
 
                             {{-- CLAUSULA SEGUNDA--}}
                             <p><br><strong>Cláusula segunda. Plazo.</strong></p>
@@ -191,7 +191,7 @@
                         
                         
                             <p style="text-align: center;"><br><br><br>______________________________</p>
-                            <p style="text-align: center;"><span id="span_id_rl_pm_b_0_rl_1">Juan Carlos Monreal Romero</span> en nombre y representación de <strong><span id="span_id_pm_b_0">IT Solutions</span></strong></p>
+                            <p style="text-align: center;"><span id="span_id_rl_pm_b_0_rl_1">Oscar Esteban Infante Gonzalez</span> en nombre y representación de <strong><span id="span_id_pm_b_0">BBVA </span></strong></p>
                         </div>
                     </div>
                 </div>
