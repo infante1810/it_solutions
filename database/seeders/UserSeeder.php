@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
         User::factory()->count(17)->create(
             new Sequence(
                 ['name' => 'Oscar',    'email' => 'Oscar@hotmail.com', 'password' => Hash::make('password')],
-                ['name' => 'Leonardo',   'email' => 'Leonardo@hotmail.com', 'password' => Hash::make('password')],
+                ['name' => 'Leonel',   'email' => 'Leonel@hotmail.com', 'password' => Hash::make('password')],
                 ['name' => 'Sandra',    'email' => 'Sandra@hotmail.com', 'password' => Hash::make('password')],
                 ['name' => 'Estefania',    'email' => 'Estefania@hotmail.com', 'password' => Hash::make('password')],
                 ['name' => 'Uriel',      'email' => 'Uriel@hotmail.com', 'password' => Hash::make('password')],
@@ -66,9 +66,9 @@ class UserSeeder extends Seeder
                     'age'                   =>  '20',
                 ],
                 [
-                    'first_name'            =>  'Leonardo',
-                    'paternal_last_name'    =>  'Ramos',
-                    'maternal_last_name'    =>  'Treto',
+                    'first_name'            =>  'Leonel',
+                    'paternal_last_name'    =>  'Rodriguez',
+                    'maternal_last_name'    =>  'Perez',
                     'url_image'             =>  'https://via.placeholder.com/800x600.png/00aaee/000000?text=LR',
                     'user_id'               =>  '2',
                     'age'                   =>  '21',
