@@ -6,7 +6,7 @@
 <!--Page header-->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Anuncios</h4>
+        <h4 class="page-title">Admon. Regions</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
@@ -96,18 +96,18 @@
         })
 
         swalWithBootstrapButtons.fire({
-          title: '¿Eliminar anuncio?',
-          text: "Si eliminas a este anuncio se eliminará permanentemente del sistema.",
+          title: '¿Eliminar registro?',
+          text: "Si eliminas a este registro se eliminará permanentemente del sistema.",
           icon: 'warning',
           showCancelButton: true,
-          confirmButtonText: 'Si, eliminar anuncio!.',
-          cancelButtonText: 'No, mantener anuncio!.',
+          confirmButtonText: 'Si, eliminar registro!.',
+          cancelButtonText: 'No, mantener registro!.',
           reverseButtons: true
         }).then((result) => {
           if (result.isConfirmed) {
             swalWithBootstrapButtons.fire(
               'Eliminado!',
-              'El anuncio se ha eliminado correctamente.',
+              'El registro se ha eliminado correctamente.',
               'success'
             )
           } else if (
