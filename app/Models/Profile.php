@@ -20,7 +20,7 @@ class Profile extends Model
         'maternal_last_name',
         'age',
         'phone_number',
-        'user_id',
+        'id',
     ];
 
     /**
