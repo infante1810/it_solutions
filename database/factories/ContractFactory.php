@@ -14,6 +14,17 @@ class ContractFactory extends Factory
     public function definition()
     {
         return [
+            'name' => $this->faker->word(),
+            'description' => $this->faker->sentence(),
+            //'location' => $this->faker->address(),
+            'total_cost' => $this->faker->randomFloat(2, 20, 100),
+            //'views_counter' => $this->faker->numberBetween(5, 100),
+            'user_id' => $this->faker->numberBetween(1, 10),
+        ];
+    }
+    /* public function definition()
+    {
+        return [
             'subject'=> $this->faker->word(),
             'description' => $this->faker->sentence(),
             'initiated_by' => $this->faker->name(),
@@ -22,5 +33,5 @@ class ContractFactory extends Factory
             'status_id' => $this->faker->numberBetween(1,2),
             'type_contract_id' => $this->faker->numberBetween(1,2),
         ];
-    }
+    } */
 }
