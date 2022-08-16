@@ -47,7 +47,7 @@ Route::middleware(['auth'])->group( function () {
 
 //    Route::get('/users',[UserController::class,'index']);
 
-    Route::resource('anuncios', AnunciosController::class);
+    Route::resource('registro1', AnunciosController::class);
     Route::resource('bd', BasesDatosController::class);
     Route::resource('comentarios', ComentariosController::class);
     Route::resource('contactos', ContactosController::class);
