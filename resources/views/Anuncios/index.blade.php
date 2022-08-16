@@ -6,7 +6,7 @@
 <!--Page header-->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Registros</h4>
+        <h4 class="page-title">Registros1</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
@@ -66,7 +66,7 @@
                                         <form action="{{route('registro1.destroy', $anuncio->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="action-btns1" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
+                                            <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                         </form>
                                     </div>
                                 </td>
