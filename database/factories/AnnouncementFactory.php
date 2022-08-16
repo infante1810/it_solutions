@@ -17,9 +17,9 @@ class AnnouncementFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'description' => $this->faker->sentence(),
-            'location' => $this->faker->address(),
+            //'location' => $this->faker->address(),
             'total_cost' => $this->faker->randomFloat(2, 20, 100),
-            'views_counter' => $this->faker->numberBetween(5, 100),
+            //'views_counter' => $this->faker->numberBetween(5, 100),
             'user_id' => $this->faker->numberBetween(1, 10),
         ];
     }
