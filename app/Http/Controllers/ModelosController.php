@@ -15,7 +15,7 @@ class ModelosController extends Controller
      */
     public function index()
     {
-        $models = Models::with('type_model')->get();
+        $models = Models::with('user')->get();
         return view('Modelos.index',get_defined_vars());
     }
 
@@ -37,8 +37,24 @@ class ModelosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
+        ]);
+
+        $model = Model::create([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
         Alert::success('Éxito', 'Modelo guardado con éxito');
-        return redirect()->route('modelos.index');
+        return redirect()->route('registro9.index');
     }
 
     /**
@@ -49,6 +65,7 @@ class ModelosController extends Controller
      */
     public function show($id)
     {
+        $model = Model::findOrFail($id);
         return view('Modelos.ver');
     }
 
@@ -60,7 +77,8 @@ class ModelosController extends Controller
      */
     public function edit($id)
     {
-        return view('Modelos.editar');
+        $model = Model::findOrFail($id);
+        return view('Modelos.editar', get_defined_vars());
     }
 
     /**
@@ -72,8 +90,17 @@ class ModelosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
+        ]);
+
+        $model = Model::findOrFail($id);
         Alert::success('Éxito', 'Modelo actualizado con éxito');
-        return redirect()->route('modelos.index');
+        return redirect()->route('registro9.index');
     }
 
     /**
@@ -84,7 +111,9 @@ class ModelosController extends Controller
      */
     public function destroy($id)
     {
+        $model = Model::findOrFail($id);
+        $model->delete();
         Alert::success('Éxito', 'Modelo eliminado con éxito');
-        return redirect()->route('modelos.index');
+        return redirect()->route('registro9.index');
     }
 }
