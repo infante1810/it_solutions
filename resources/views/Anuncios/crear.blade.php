@@ -7,9 +7,9 @@
     <div class="page-leftheader">
         <h4 class="page-title">ANUNCIOS</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('anuncios.index') }}">Anuncios</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro1.index') }}">Anuncios</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Agregar anuncio</li>
+            <li class="text-muted mb-1 fs-16">Agregar Registro</li>
         </ul>
     </div>
 </div>
@@ -25,7 +25,7 @@
 <div class="row">
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
-			<form action="{{route('anuncios.store')}}" method="POST">
+			<form action="{{route('registro1.store')}}" method="POST">
 			@csrf
 			<div class="card-body">
 
@@ -43,7 +43,7 @@
                             @enderror
 						</div>
 					</div>
-					<div class="col-md-3">
+				<!--<div class="col-md-3">
 						<div class="form-group">
 							<label for="location" class="form-label">Localización</label>
 							<input id="location" class="form-control @error('location') is-invalid @enderror" type="text" maxlength="100"
@@ -66,7 +66,7 @@
                                 </span>
                             @enderror
 						</div>
-					</div>
+					</div>-->
 				</div>
 
 				<div class="row">

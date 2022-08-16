@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Editar anuncio</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('anuncios.index') }}">Anuncios</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro1.index') }}">Anuncios</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Editar anuncios</li>
         </ul>
@@ -23,12 +23,12 @@
 <div class="row">
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
-			<form method="POST" action="{{route('anuncios.update', $anuncio->id)}}" enctype="multipart/form-data">
+			<form method="POST" action="{{route('registro1.update', $anuncio->id)}}" enctype="multipart/form-data">
 				@method('PATCH')
 				@csrf
 			<div class="card-body">
 
-				<h4 class="mb-5 font-weight-semibold">Edita el anuncio {{$anuncio->id}} </h4>
+				<h4 class="mb-5 font-weight-semibold">Edita el registro {{$anuncio->id}} </h4>
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
@@ -42,7 +42,7 @@
                             @enderror
 						</div>
 					</div>
-					<div class="col-md-3">
+				<!--<div class="col-md-3">
 						<div class="form-group">
 							<label for="location" class="form-label">Localización</label>
 							<input id="location" class="form-control @error('location') is-invalid @enderror" type="text" maxlength="100"
@@ -65,7 +65,7 @@
                                 </span>
                             @enderror
 						</div>
-					</div>
+					</div>-->
 				</div>
 
 				<div class="row">
@@ -73,7 +73,7 @@
 						<div class="form-group">
 							<label for="description" class="form-label">Descripción</label>
 							<textarea id="description" class="form-control @error('description') is-invalid @enderror" type="text" rows="6"
-                                      placeholder="Ingresa el contenido de tu anuncio" name="description" required>
+                                      placeholder="Ingresa descripcion del servicio/Producto" name="description" required>
                                 {{ $anuncio->description }}
                             </textarea>
                             @error('description')
