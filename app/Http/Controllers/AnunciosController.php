@@ -142,7 +142,7 @@ class AnunciosController extends Controller
     {
         $anuncio = Announcement::findOrFail($id);
         $anuncio->delete();
-        //Alert::success('Éxito', 'Anuncio eliminada con éxito');
+        Alert::success('Éxito', 'Anuncio eliminado con éxito');
         return redirect()->route('registro1.index');
     }
 }
