@@ -45,7 +45,7 @@ class ModelosController extends Controller
             //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
-        $model = Model::create([
+        $model = Models::create([
             'name'              =>  $request['name'],
             'description'       =>  $request['description'],
             //'location'          =>  $request['location'],
@@ -54,7 +54,7 @@ class ModelosController extends Controller
             'user_id'           =>  $request['user_id'],
         ]);
         Alert::success('Éxito', 'Modelo guardado con éxito');
-        return redirect()->route('registro9.index');
+        return redirect()->route('registro2.index');
     }
 
     /**
@@ -65,8 +65,8 @@ class ModelosController extends Controller
      */
     public function show($id)
     {
-        $model = Model::findOrFail($id);
-        return view('Modelos.ver');
+        $model = Models::findOrFail($id);
+        return view('Modelos.ver',get_defined_vars());
     }
 
     /**
@@ -77,7 +77,7 @@ class ModelosController extends Controller
      */
     public function edit($id)
     {
-        $model = Model::findOrFail($id);
+        $model = Models::findOrFail($id);
         return view('Modelos.editar', get_defined_vars());
     }
 
@@ -98,9 +98,9 @@ class ModelosController extends Controller
             //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
-        $model = Model::findOrFail($id);
+        $model = Models::findOrFail($id);
         Alert::success('Éxito', 'Modelo actualizado con éxito');
-        return redirect()->route('registro9.index');
+        return redirect()->route('registro2.index');
     }
 
     /**
@@ -111,9 +111,9 @@ class ModelosController extends Controller
      */
     public function destroy($id)
     {
-        $model = Model::findOrFail($id);
+        $model = Models::findOrFail($id);
         $model->delete();
         Alert::success('Éxito', 'Modelo eliminado con éxito');
-        return redirect()->route('registro9.index');
+        return redirect()->route('registro2.index');
     }
 }

@@ -5,12 +5,12 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Registros9</h4>
+        <h4 class="page-title">Registros 2</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('registro9.create')}}" class="btn btn-primary mr-3">Agregar Registro</a>
+                <a href="{{route('registro2.create')}}" class="btn btn-primary mr-3">Agregar Registro</a>
             </div>
         </div>
     </div>
@@ -61,9 +61,9 @@
                                 </td>
                                 <td>
                                 <div class="d-flex">
-                                        <a href="{{route('registro9.show',$model->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
-                                        <a href="{{route('registro9.edit',$model->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen text-success"></i></a>
-                                        <form action="{{route('registro9.destroy', $model->id)}}" method="post">
+                                        <a href="{{route('registro2.show',$model->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('registro2.edit',$model->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen text-success"></i></a>
+                                        <form action="{{route('registro2.destroy', $model->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa fa-trash-o text-danger"></i></button>

@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Editar modelo</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a  href="{{ route('registro9.index') }}">Modelos</a></li>
+            <li class="mb-1 fs-16"><a  href="{{ route('registro2.index') }}">Registro 2</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Editar modelo</li>
         </ul>
@@ -20,7 +20,7 @@
 <div class="row">
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
-			<form method="POST" action="{{route('registro9.update', $model->id)}}" enctype="multipart/form-data">
+			<form method="POST" action="{{route('registro2.update', $model->id)}}" enctype="multipart/form-data">
 				@method('PATCH')
 				@csrf
 			<div class="card-body">
