@@ -16,7 +16,10 @@ class Models extends Model
      */
     protected $fillable = [
         'name',
-        'type_models_id',
+        'description',
+        //'location',
+        'total_cost',
+        //'views_counter',
         'user_id',
     ];
 
@@ -49,8 +52,5 @@ class Models extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function type_model()
-    {
-        return $this->belongsTo('App\Models\TypeModel','type_models_id');
-    }
+    
 }
