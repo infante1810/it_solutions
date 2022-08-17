@@ -74,7 +74,7 @@
 						<div class="form-group">
 							<label for="description" class="form-label">Descripción</label>
 							<textarea id="description" class="form-control @error('description') is-invalid @enderror" type="text" rows="6"
-                                      placeholder="Ingresa el contenido de tu anuncio" name="description" required
+                                      placeholder="Ingresa el contenido de tu registro" name="description" required
                                       value="{{ old('description') }}"></textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">
