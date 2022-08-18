@@ -4,34 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use App\Models\Database;
+
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        $this->call([//This is the way
-            DepartmentSeeder::class,
-            UserSeeder::class,
-            AnnouncementSeeder::class,
-            CommentSeeder::class,
-            TypeContractSeeder::class,
-            StatusSeeder::class,
-            TypeModelSeeder::class,
-            ModelSeeder::class,
-            StatusSeeder::class,
-            ContractSeeder::class,
-            CustomerSeeder::class,
-            ProjectSeeder::class,
-            QuestionSeeder::class,
-            AnswerSeeder::class,
-            RiskSeeder::class,
-            TaskSeeder::class,
-            EventSeeder::class,
-        ]);
+        Database::factory()->count(10)->create();
+
     }
 }

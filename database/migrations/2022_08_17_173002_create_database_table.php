@@ -13,7 +13,7 @@ class CreateDatabaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('database', function (Blueprint $table) {
+        Schema::create('databases', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
