@@ -131,6 +131,6 @@ class BasesDatosController extends Controller
         $database = Database::findOrFail($id);
         $database->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('registro1.index');
+        return redirect()->route('registro3.index');
     }
 }
