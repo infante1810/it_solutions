@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group( function () {
 //    Route::get('/users',[UserController::class,'index']);
 
     Route::resource('registro1', AnunciosController::class);
-    Route::resource('bd', BasesDatosController::class);
+    Route::resource('registro3', BasesDatosController::class);
     Route::resource('comentarios', ComentariosController::class);
     Route::resource('contactos', ContactosController::class);
     Route::resource('contratos', ContratosController::class);
