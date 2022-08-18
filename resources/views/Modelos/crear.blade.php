@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">REGISTRO 2</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('bd.index') }}">Registro2</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro2.index') }}">Registro2</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Agregar Registro</li>
         </ul>
@@ -25,7 +25,7 @@
 <div class="row">
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
-			<form action="{{route('bd.store')}}" method="POST">
+			<form action="{{route('registro2.store')}}" method="POST">
 			@csrf
 			<div class="card-body">
 
