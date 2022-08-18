@@ -60,7 +60,7 @@ class BasesDatosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro creado con éxito');
-        return redirect()->route('bd.index');
+        return redirect()->route('registro3.index');
     }
 
     /**
@@ -117,7 +117,7 @@ class BasesDatosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Anuncio actualizado con éxito');
-        return redirect()->route('bd.index');
+        return redirect()->route('registro3.index');
     }
 
     /**
@@ -131,6 +131,6 @@ class BasesDatosController extends Controller
         $database = Database::findOrFail($id);
         $database->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('bd.index');
+        return redirect()->route('registro1.index');
     }
 }
