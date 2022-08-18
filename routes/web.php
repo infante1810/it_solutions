@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group( function () {
     Route::resource('departamentos', DepartamentosController::class);
     Route::resource('eventos', EventosController::class);
     Route::resource('empleados', EmpleadosController::class);
-    Route::resource('modelos', ModelosController::class);
+    Route::resource('registro2', ModelosController::class);
     Route::resource('preguntas', PreguntasController::class);
     // Route::resource('respuestas', RespuestasController::class);
     Route::resource('proyectos', ProyectosController::class);
