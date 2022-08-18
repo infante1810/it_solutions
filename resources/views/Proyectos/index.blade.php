@@ -47,8 +47,8 @@
                                     <td>
                                         <div class="d-flex">
                                             <div class="mr-3 mt-0 mt-sm-1 d-block">
-                                                <h6 class="mb-1 fs-14">{{$project->customers->first_name}}</h6>
-                                                <p class="text-muted mb-0 fs-12">{{$project->customers->email}}</p>
+                                                <h6 class="mb-1 fs-14">{{$project->name}}</h6>
+                                                <p class="text-muted mb-0 fs-12">{{$project->name}}</p>
                                             </div>
                                         </div>
                                     </td>
