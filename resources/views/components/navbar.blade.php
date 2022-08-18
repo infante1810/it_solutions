@@ -28,7 +28,7 @@
 						<div class="p-3 text-center border-bottom">
 							<a href="#" class="text-center user pb-0 font-weight-bold">{{ Auth::user()->name }}</a>
 							
-							<p class="text-center user-semi-title">ADMIN</p>
+							<p class="text-center user-semi-title">Admin</p>
 
 						</div>
 						<a class="dropdown-item d-flex" href="{{route('profile.index')}}">

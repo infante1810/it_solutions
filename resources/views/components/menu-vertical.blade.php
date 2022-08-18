@@ -30,7 +30,7 @@
 				</a>
 			</li>
 			<li class="slide">
-				<a class="side-menu__item  {{ Request::is('bd') ? 'active' : '' }}" data-toggle="slide" href="{{route('bd.index')}}" id="bd">
+				<a class="side-menu__item  {{ Request::is('bd') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro3.index')}}" id="bd">
 					<i class="fa-solid fa-database mr-2"></i>
 					<span class="side-menu__label">Area 3</span>
 				</a>
@@ -44,12 +44,19 @@
 				</a>
 			</li>
 
-            <li class="slide">
+			<li class="slide">
+				<a class="side-menu__item {{ Request::is('departamentos') ? 'active' : '' }}" data-toggle="slide" href="{{route('departamentos.index')}}" id="departamentos">
+					<i class="fa-solid fa-address-card mr-2"></i>
+					<span class="side-menu__label">Area 5</span>
+				</a>
+			</li>
+
+        <!--<li class="slide">
 				<a class="side-menu__item {{ Request::is('contactos') ? 'active' : ''}}" data-toggle="slide" href="{{route('contactos.index')}}" id="contactos">
 					<i class="fa-solid fa-address-book mr-2"></i>
 					<span class="side-menu__label">Area 5</span>
 				</a>
-			</li>
+			</li>-->
 
             <li class="slide">
 				<a class="side-menu__item {{ Request::is('contratos') ? 'active' : ''}}" data-toggle="slide" href="{{route('contratos.index')}}" id="contratos">

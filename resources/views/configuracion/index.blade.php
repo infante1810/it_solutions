@@ -143,7 +143,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="department" class="form-label">Departamento</label>
-                                    <input id="department" class="form-control" disabled value="{{ $department->name }}">
+                                    <input id="department" class="form-control" disabled value="{{ $department }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -161,11 +161,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-label">Actividades a desempeñar</label>
-                                    <div>
-                                        @foreach($profile->user->tasks as $task)
-                                            <span class="badge rounded-pill bg-primary">{{ $task->name }}</span>
-                                        @endforeach
-                                    </div>
+                                    <input id="type_contract" class="form-control" disabled value="Desarrollo">
                                 </div>
                             </div>
 
