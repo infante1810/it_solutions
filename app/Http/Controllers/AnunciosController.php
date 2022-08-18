@@ -126,7 +126,7 @@ class AnunciosController extends Controller
             'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Anuncio actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('registro1.index');
     }
 
@@ -142,7 +142,7 @@ class AnunciosController extends Controller
     {
         $anuncio = Announcement::findOrFail($id);
         $anuncio->delete();
-        Alert::success('Éxito', 'Anuncio eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro1.index');
     }
 }

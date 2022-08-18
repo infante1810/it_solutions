@@ -53,7 +53,7 @@ class ModelosController extends Controller
             //'views_counter'     =>  $request['views_counter'],
             'user_id'           =>  $request['user_id'],
         ]);
-        Alert::success('Éxito', 'Modelo guardado con éxito');
+        Alert::success('Éxito', 'Registro guardado con éxito');
         return redirect()->route('registro2.index');
     }
 
@@ -99,7 +99,7 @@ class ModelosController extends Controller
         ]);
 
         $model = Models::findOrFail($id);
-        Alert::success('Éxito', 'Modelo actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('registro2.index');
     }
 
@@ -113,7 +113,7 @@ class ModelosController extends Controller
     {
         $model = Models::findOrFail($id);
         $model->delete();
-        Alert::success('Éxito', 'Modelo eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro2.index');
     }
 }
