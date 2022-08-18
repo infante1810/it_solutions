@@ -19,7 +19,7 @@ class ProfileController extends Controller
         $profile = Profile::with('user.tasks')->where('user_id', '=', auth()->id())->first();
 //        dd($profile);
 
-        $department = auth()->user()->departments()->get();
+        $department = Department::get();
 //        dd($department);
         return view('configuracion.index', [
             'profile' => $profile,
