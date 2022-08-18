@@ -17,7 +17,10 @@ class Risk extends Model
     protected $fillable = [
         'name',
         'description',
-        'solution',
+        //'location',
+        'total_cost',
+        //'views_counter',
+        'user_id',
     ];
 
     /**
@@ -34,14 +37,14 @@ class Risk extends Model
      */
     protected $casts = [];
 
-
     /**
-     * Get the projects that owns the risk
+     * Get the User that owns the Announcement
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function projects()
+    public function user()
     {
-        return $this->belongsToMany('App\Models\Project');
+        return $this->belongsTo('App\Models\User');
     }
+
 }
