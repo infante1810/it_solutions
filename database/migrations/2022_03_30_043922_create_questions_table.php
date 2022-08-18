@@ -17,7 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->foreignId('user_id')->constrained();
+            $table->decimal('user_id', 12, 0)->default(0);
+            //$table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

@@ -41,6 +41,28 @@
     ```
     php artisan migrate --seed
     ```
+  * Or if doesn't work use this commands
+
+    ```
+    php artisan db:seed --class=DatabaseSeeder
+    php artisan db:seed --class=AnnouncementSeeder
+    php artisan db:seed --class=AnswerSeeder
+    php artisan db:seed --class=CommentSeeder
+    php artisan db:seed --class=ContractSeeder
+    php artisan db:seed --class=CustomerSeeder
+    php artisan db:seed --class=DepartmentSeeder
+    php artisan db:seed --class=EventSeeder
+    php artisan db:seed --class=ModelSeeder
+    php artisan db:seed --class=ProjectSeeder
+    php artisan db:seed --class=QuestionSeeder
+    php artisan db:seed --class=RiskSeeder
+    php artisan db:seed --class=StatusSeeder
+    php artisan db:seed --class=TaskSeeder
+    php artisan db:seed --class=TypeContractSeeder
+    php artisan db:seed --class=TypeModelSeeder
+    php artisan db:seed --class=UserSeeder
+    ```
+
     Generates migrations and populates the DB with default data
 
   * Utilities
