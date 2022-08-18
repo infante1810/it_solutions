@@ -99,6 +99,16 @@ class ModelosController extends Controller
         ]);
 
         $model = Models::findOrFail($id);
+
+        $model->update([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
+
         Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('registro2.index');
     }
