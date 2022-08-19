@@ -5,11 +5,11 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Agregar proyecto</h4>
+        <h4 class="page-title">REGISTRO9</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ url()->previous() }}">Proyectos</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('proyectos.index') }}">Registro1</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Agregar proyecto</li>
+            <li class="text-muted mb-1 fs-16">Agregar registro</li>
         </ul>
     </div>
 </div>
@@ -22,18 +22,18 @@
 	<div class="row">
 		<div class="col-xl-12 col-md-12 col-lg-12">
 			<div class="card">
-				<div class="card-body">
-					<form action="{{route('proyectos.store')}}" method="POST">
-						@csrf
-						<h4 class="mb-5 font-weight-semibold">Detalles del proyecto</h4>
+				<form action="{{route('proyectos.store')}}" method="POST">
 
-						{{-- Primera fila del formulario --}}
-						<div class="row">
-							{{-- Nombre del evento --}}
+				@csrf
+				<div class="card-body">
+
+					<h4 class="mb-5 font-weight-semibold">Crear un registro</h4>
+					<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-									<label class="form-label">Nombre del proyecto:</label>
-									<input class="form-control @error('name') is-invalid @enderror" placeholder="Ingresa nombre del proyecto" name="name" type="text" maxlength="50" value="{{ old('name') }}" required>
+									<label class="form-label">Nombre</label>
+									<input id="name" class="form-control @error('name') is-invalid @enderror" type="text" maxlength="22"
+                                   		name="name" autofocus required value="{{ old('name') }}">
 									@error('name')
                                         <span class="invalid-feedback" role="alert">
                                             {{ $message }}
