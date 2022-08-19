@@ -16,15 +16,12 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->decimal('cost_hour',5, 2);
-            $table->decimal('total_cost',13, 3);
-            // $table->decimal('total_time', 10, 2);
-            // // // $table->foreignId('user_id')->constrained();
-            // $table->foreignId('customer_id');
-            // $table->foreignId('contract_id')->constrained();
+            $table->string('description')->nullable();
+            //$table->string('location');
+            $table->decimal('total_cost', 12, 2)->default(0.00);
+            //$table->integer('views_counter')->default(0);
+            $table->decimal('user_id', 12, 0)->default(0);
+            //$table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
