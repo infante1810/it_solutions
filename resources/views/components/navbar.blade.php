@@ -17,7 +17,7 @@
 				<div class="dropdown profile-dropdown">
 					<a href="#" class="nav-link pr-1 pl-0 leading-none" data-bs-toggle="dropdown">
 						<span>
-                            @if(is_null(Auth::user()->profile->url_image))
+                            @if(empty(Auth::user()))
 							    <img src="{{ asset('images/usuario.png') }}" alt="img" class="avatar avatar-md bradius">
                             @else
                                 <img src="{{ asset(Auth::user()->profile->url_image) }}" alt="img" class="avatar avatar-md bradius">
@@ -26,10 +26,18 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow animated">
 						<div class="p-3 text-center border-bottom">
+						@if(empty(Auth::user()))
+							<a href="#" class="text-center user pb-0 font-weight-bold">Recover user</a>
+                        @else
 							<a href="#" class="text-center user pb-0 font-weight-bold">{{ Auth::user()->name }}</a>
 							
+                        @endif
+							
+						@if(!empty(Auth::user()))	
 							<p class="text-center user-semi-title">Admin</p>
-
+						@else
+							<p class="text-center user-semi-title"></p>
+						@endif
 						</div>
 						<a class="dropdown-item d-flex" href="{{route('profile.index')}}">
 							<i class="fa-solid fa-user mr-3 fs-16 my-auto"></i>
