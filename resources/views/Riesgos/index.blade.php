@@ -45,6 +45,7 @@
                             @foreach($riesgos as $riesgo)
                             <tr>
                                 <td>{{$riesgo->id}}</td>
+                                </td>
                                 <td width='150px'>
                                     <span>{{$riesgo->name}}</span>
                                 </td>
