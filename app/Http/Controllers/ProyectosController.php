@@ -64,7 +64,7 @@ class ProyectosController extends Controller
 
 
         Alert::success('Éxito', 'Proyecto guardado con éxito');
-        return redirect()->route('proyectos.index');
+        return redirect()->route('registro9.index');
     }
 
     /**
@@ -126,7 +126,7 @@ class ProyectosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro actualizado con éxito');
-        return redirect()->route('proyectos.index');
+        return redirect()->route('registro9.index');
     }
 
 
@@ -142,7 +142,7 @@ class ProyectosController extends Controller
 
         $project->delete();
         Alert::success('Éxito', 'Proyecto eliminado con éxito');
-        return redirect()->route('proyectos.index');
+        return redirect()->route('registro9.index');
     }
 
 }

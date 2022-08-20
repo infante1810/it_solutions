@@ -58,7 +58,7 @@ Route::middleware(['auth'])->group( function () {
     Route::resource('registro2', ModelosController::class);
     Route::resource('preguntas', PreguntasController::class);
     // Route::resource('respuestas', RespuestasController::class);
-    Route::resource('proyectos', ProyectosController::class);
+    Route::resource('registro9', ProyectosController::class);
     Route::resource('registro10', RiesgosController::class);
 
 });

@@ -96,7 +96,7 @@
 			</li>
 
 			<li class="slide">
-				<a class="side-menu__item {{ Request::is('proyectos') ? 'active' : '' }}" data-toggle="slide" href="{{route('proyectos.index')}}" id="proyectos">
+				<a class="side-menu__item {{ Request::is('registro9') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro9.index')}}" id="proyectos">
 					<i class="fa-solid fa-list-check mr-2"></i>
 					<span class="side-menu__label">Area 9</span>
 				</a>
