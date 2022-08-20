@@ -14,6 +14,6 @@ class RiskSeeder extends Seeder
      */
     public function run()
     {
-        Risk::factory()->count(4)->create();
+        Risk::factory()->count(10)->create();
     }
 }
