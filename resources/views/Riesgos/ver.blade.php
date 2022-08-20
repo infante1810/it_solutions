@@ -5,11 +5,11 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Ver riesgo</h4>
+        <h4 class="page-title">Ver registro</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ url()->previous() }}">Control de riesgos</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('riesgos.index') }}">Registro 10</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Ver riesgo</li>
+            <li class="text-muted mb-1 fs-16">Ver registro</li>
         </ul>
     </div>
 </div>
@@ -23,11 +23,16 @@
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="mb-5 font-weight-semibold">Información</h4>
-                <form action="{{route('riesgos.show',$riesgo->id)}}" method = "POST">
-                @method('PUT')
-                @csrf                   
-                <div class="container">
+            <h4 class="mb-5 font-weight-semibold">Registro</h4>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="form-label">Nombre</label>
+            <div class="text-muted">{{$riesgo->name}}</div>
+        </div>
+    </div>                 
+                <!--div class="container">
                     <div class="row">
                         <div class="col-md-2">
                             <div class="form-group">
@@ -40,22 +45,22 @@
                                 <label class="form-label">Nombre del riesgo</label>
                                 <input class="form-control" type="text" placeholder="Sin información" name="name" maxlength="22" value="{{$riesgo->name}}" disabled>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                     <div class="row">
                             {{-- Descripción --}}
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Descripción:</label>
-                                    <textarea rows="3" class="form-control" name="description" placeholder="Agrega una breve descripción" maxlength="250" disabled>{{$riesgo->description}}</textarea>
+                                    <div class="text-muted">{{$riesgo->description}}</div>
                                 </div>
                             </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label class="form-label">Solución:</label>
-                                <textarea rows="3" class="form-control" name="solution" placeholder="Sin Información." maxlength="250" disabled>{{$riesgo->solution}}</textarea>
+                            <label class="form-label">Costo total</label>
+							<div class="text-muted">{{$riesgo->total_cost}}</div>   
                             </div>
                         </div>
                     </div>

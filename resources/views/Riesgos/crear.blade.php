@@ -5,11 +5,11 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Agregar riesgo</h4>
+        <h4 class="page-title">REGISTRO 10</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ url()->previous() }}">Riesgos</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('riesgos.index') }}">Registro 10</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Agregar riesgo</li>
+            <li class="text-muted mb-1 fs-16">Agregar Registro</li>
         </ul>
     </div>
 </div>
@@ -26,24 +26,28 @@
                     <div class="card-body">
                         <h4 class="mb-5 font-weight-semibold">Información del riesgo</h4>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-label">Nombre del riesgo</label>
-                                    <input required class="form-control @error('name') is-invalid @enderror" type="text" placeholder="Ingresa el nombre del riesgo" name="name" maxlength="22" value="{{ old('name') }}">
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
+                                <label for="name" class="form-label">Nombre</label>
+							    <input id="name" class="form-control @error('name') is-invalid @enderror" type="text" maxlength="22"
+                                   name="name" autofocus required value="{{ old('name') }}">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
                                             <strong> {{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
                             {{-- Descripción --}}
+                            <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Descripción:</label>
-                                    <textarea required rows="3" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Agrega una breve descripción" maxlength="250"></textarea>
-                                    @error('description')
-                                        <span class="invalid-feedback" role="alert">
+                                <label for="description" class="form-label">Descripción</label>
+							    <textarea id="description" class="form-control @error('description') is-invalid @enderror" type="text" rows="6"
+                                      placeholder="Ingresa el contenido de tu registro" name="description" required
+                                      value="{{ old('description') }}"></textarea>
+                                  @error('description')
+                                <span class="invalid-feedback" role="alert">
                                             <strong> {{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -52,27 +56,29 @@
                         </div>
                         <div class="row">
                             {{-- solucion --}}
-                            <div class="col-md-10">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="form-label">Solución del riesgo:</label>
-                                    <textarea required rows="3" class="form-control @error('solution') is-invalid @enderror" name="solution" placeholder="Agrega una breve descripción" maxlength="250"></textarea>
-                                    @error('solution')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong> {{ $message }}</strong>
+                                <label for="total_cost" class="form-label">Costo total</label>
+							<input id="total_cost" class="form-control @error('total_cost') is-invalid @enderror" type="number" step="0.01"
+                                   placeholder="50.00" name="total_cost" required min="0" value="{{ old('total_cost') }}">
+                            @error('total_cost')
+                                <span class="invalid-feedback" role="alert">
+                                <strong> {{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
                         </div>
 
+                        <input type="hidden" name="user_id" value="1">
                     </div>
                     <div class="card-footer text-right">
                         <a role="button" class="btn btn-outline-dark" href="{{ url()->previous() }}">
                             <i class="feather feather-corner-down-left sidemenu_icon"></i>
                             Regresar
                         </a>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="feather  feather-save sidemenu_icon"></i>
+                        <button type="submit" class="btn btn-primary" id="enviar">
+					<i class="feather  feather-save sidemenu_icon"></i>
                             Guardar</button>
                     </div>
                 </form>
