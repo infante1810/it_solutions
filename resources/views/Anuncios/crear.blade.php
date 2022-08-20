@@ -5,11 +5,11 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">ANUNCIOS</h4>
+        <h4 class="page-title">REGISTRO 1</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('anuncios.index') }}">Anuncios</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro1.index') }}">Registro1</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Agregar anuncio</li>
+            <li class="text-muted mb-1 fs-16">Agregar Registro</li>
         </ul>
     </div>
 </div>
@@ -25,11 +25,12 @@
 <div class="row">
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
-			<form action="{{route('anuncios.store')}}" method="POST">
+			<form action="{{route('registro1.store')}}" method="POST">
+			
 			@csrf
 			<div class="card-body">
 
-				<h4 class="mb-5 font-weight-semibold">Crea un anuncio</h4>
+				<h4 class="mb-5 font-weight-semibold">Crea un registro</h4>
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
@@ -43,7 +44,7 @@
                             @enderror
 						</div>
 					</div>
-					<div class="col-md-3">
+				<!--<div class="col-md-3">
 						<div class="form-group">
 							<label for="location" class="form-label">Localización</label>
 							<input id="location" class="form-control @error('location') is-invalid @enderror" type="text" maxlength="100"
@@ -66,7 +67,7 @@
                                 </span>
                             @enderror
 						</div>
-					</div>
+					</div>-->
 				</div>
 
 				<div class="row">
@@ -74,7 +75,7 @@
 						<div class="form-group">
 							<label for="description" class="form-label">Descripción</label>
 							<textarea id="description" class="form-control @error('description') is-invalid @enderror" type="text" rows="6"
-                                      placeholder="Ingresa el contenido de tu anuncio" name="description" required
+                                      placeholder="Ingresa el contenido de tu registro" name="description" required
                                       value="{{ old('description') }}"></textarea>
                             @error('description')
                                 <span class="invalid-feedback" role="alert">

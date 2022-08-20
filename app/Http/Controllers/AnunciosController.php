@@ -47,9 +47,9 @@ class AnunciosController extends Controller
         $request->validate([
             'name'          =>  'required|max:255',
             'description'   =>  'required|max:255',
-            'location'      =>  'required|max:255',
+            //'location'      =>  'required|max:255',
             'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
-            'views_counter'  =>  'required|numeric|gt:0',
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
         //TODO: CHANGE USER_ID TO auth()->id
@@ -57,14 +57,14 @@ class AnunciosController extends Controller
         $anuncio = Announcement::create([
             'name'              =>  $request['name'],
             'description'       =>  $request['description'],
-            'location'          =>  $request['location'],
+            //'location'          =>  $request['location'],
             'total_cost'        =>  $request['total_cost'],
-            'views_counter'     =>  $request['views_counter'],
+            //'views_counter'     =>  $request['views_counter'],
             'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Anuncio creado con éxito');
-        return redirect()->route('anuncios.index');
+        Alert::success('Éxito', 'Registro creado con éxito');
+        return redirect()->route('registro1.index');
     }
 
     /**
@@ -110,9 +110,9 @@ class AnunciosController extends Controller
         $request->validate([
             'name'          =>  'required|max:255',
             'description'   =>  'required|max:255',
-            'location'      =>  'required|max:255',
+            //'location'      =>  'required|max:255',
             'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
-            'views_counter'  =>  'required|numeric|gt:0',
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
         $anuncio = Announcement::findOrFail($id);
@@ -120,14 +120,14 @@ class AnunciosController extends Controller
         $anuncio->update([
             'name'              =>  $request['name'],
             'description'       =>  $request['description'],
-            'location'          =>  $request['location'],
+            //'location'          =>  $request['location'],
             'total_cost'        =>  $request['total_cost'],
-            'views_counter'     =>  $request['views_counter'],
+            //'views_counter'     =>  $request['views_counter'],
             'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Anuncio actualizado con éxito');
-        return redirect()->route('anuncios.index');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
+        return redirect()->route('registro1.index');
     }
 
     /**
@@ -142,7 +142,7 @@ class AnunciosController extends Controller
     {
         $anuncio = Announcement::findOrFail($id);
         $anuncio->delete();
-        //Alert::success('Éxito', 'Anuncio eliminada con éxito');
-        return redirect()->route('anuncios.index');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
+        return redirect()->route('registro1.index');
     }
 }

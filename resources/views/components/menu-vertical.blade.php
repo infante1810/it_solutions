@@ -17,9 +17,9 @@
 			</li>
 
              <li class="slide">
-				<a class="side-menu__item {{ Request::is('anuncios') ? 'active' : '' }}" data-toggle="slide" href="{{route('anuncios.index')}}" id="anuncios">
+				<a class="side-menu__item {{ Request::is('registro1') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro1.index')}}" id="anuncios">
 					<i class="fa-brands fa-adversal mr-2"></i>
-					<span class="side-menu__label">Anuncios</span>
+					<span class="side-menu__label">Area 1</span>
 				</a>
 			</li>
 

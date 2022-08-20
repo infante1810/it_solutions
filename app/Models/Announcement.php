@@ -17,9 +17,9 @@ class Announcement extends Model
     protected $fillable = [
         'name',
         'description',
-        'location',
+        //'location',
         'total_cost',
-        'views_counter',
+        //'views_counter',
         'user_id',
     ];
 
