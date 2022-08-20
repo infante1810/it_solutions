@@ -26,6 +26,7 @@
 	<div class="col-xl-12 col-md-12 col-lg-12">
 		<div class="card">
 			<form action="{{route('registro1.store')}}" method="POST">
+			
 			@csrf
 			<div class="card-body">
 
