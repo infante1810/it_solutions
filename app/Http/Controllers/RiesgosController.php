@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Risk;
+use RealRashid\SweetAlert\Facades\Alert;
 // use RealRashid\SweetAlert\Facade\Alert;
 
 class RiesgosController extends Controller
@@ -15,10 +16,8 @@ class RiesgosController extends Controller
      */
     public function index()
     {
-        $riesgos = Risk::all();
-
-
-        return view('Riesgos.index',get_defined_vars());
+        $riesgos = Risk::with('user')->get();
+        return view('riesgos.index',get_defined_vars());
     }
 
     /**
@@ -39,10 +38,28 @@ class RiesgosController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required','description' => 'required','solution' => 'required',]);
-        Risk::create($request->all());
-        // Alert::success('Éxito', 'Riesgo guardado con éxito');
-        return redirect()->route('riesgos.index');
+                //dd($request->all());
+                $request->validate([
+                    'name'          =>  'required|max:255',
+                    'description'   =>  'required|max:255',
+                    //'location'      =>  'required|max:255',
+                    'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+                    //'views_counter'  =>  'required|numeric|gt:0',
+                ]);
+        
+                //TODO: CHANGE USER_ID TO auth()->id
+        
+                $riesgo = Risk::create([
+                    'name'              =>  $request['name'],
+                    'description'       =>  $request['description'],
+                    //'location'          =>  $request['location'],
+                    'total_cost'        =>  $request['total_cost'],
+                    //'views_counter'     =>  $request['views_counter'],
+                    'user_id'           =>  $request['user_id'],
+                ]);
+        
+                Alert::success('Éxito', 'Registro creado con éxito');
+                return redirect()->route('riesgos.index');
     }
 
     /**
@@ -78,10 +95,26 @@ class RiesgosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(['name' => 'required','description' => 'required','solution' => 'required',]);
+        $request->validate([
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
+        ]);
+
         $riesgo = Risk::findOrFail($id);
-        $riesgo->update($request->all());        
-        // Alert::success('Éxito', 'Riesgo actualizado con éxito');
+
+        $riesgo->update([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
+
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('riesgos.index');
     }
 
@@ -95,7 +128,7 @@ class RiesgosController extends Controller
     {
         $riesgo = Risk::findOrFail($id);
         $riesgo->delete();
-        // Alert::success('Éxito', 'Riesgo eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('riesgos.index');
     }
 }
