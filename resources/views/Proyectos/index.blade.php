@@ -38,7 +38,7 @@
                             <tr>
                                 <th class="border-bottom-0">ID</th>
                                 <th class="border-bottom-0">Servicio/Producto</th>
-                                <th class="border-bottom-0">Cliente</th>
+                                <th class="border-bottom-0">Descripcion </th>
                                 <th class="border-bottom-0">Costos</th>
                                 <th class="border-bottom-0" Style="text-align: center;">Acciones</th>
                             </tr>
