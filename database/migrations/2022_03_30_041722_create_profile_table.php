@@ -21,7 +21,7 @@ class CreateProfileTable extends Migration
             $table->integer('age')->nullable();
             $table->text('url_image')->nullable();
             $table->string('phone_number', 15)->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('user_id');            
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile');
+        Schema::dropIfExists('profiles');
     }
 }
