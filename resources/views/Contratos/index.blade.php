@@ -57,10 +57,10 @@
                                 <td>{{$contrato->start_date}}</td>
                                 <td>{{$contrato->end_date}}</td>
                                 <td>
-                                    <span class="badge rounded-pill bg-info text-dark">{{$contrato->status->name}}</span>
+                                    <span class="badge rounded-pill bg-info text-dark">{{$contrato->description}}</span>
                                 </td>
                                 <td>
-                                    <span class="badge rounded-pill bg-success">{{$contrato->type_contract->name}}</span>
+                                    <span class="badge rounded-pill bg-success">{{$contrato->description}}</span>
                                 </td>
                                 <td>
                                     <div class="d-flex">
