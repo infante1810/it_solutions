@@ -48,17 +48,17 @@ Route::middleware(['auth'])->group( function () {
 //    Route::get('/users',[UserController::class,'index']);
 
     Route::resource('registro1', AnunciosController::class);
-    Route::resource('bd', BasesDatosController::class);
+    Route::resource('registro3', BasesDatosController::class);
     Route::resource('comentarios', ComentariosController::class);
     Route::resource('contactos', ContactosController::class);
     Route::resource('contratos', ContratosController::class);
     Route::resource('departamentos', DepartamentosController::class);
     Route::resource('eventos', EventosController::class);
     Route::resource('empleados', EmpleadosController::class);
-    Route::resource('modelos', ModelosController::class);
+    Route::resource('registro2', ModelosController::class);
     Route::resource('preguntas', PreguntasController::class);
     // Route::resource('respuestas', RespuestasController::class);
     Route::resource('proyectos', ProyectosController::class);
-    Route::resource('riesgos', RiesgosController::class);
+    Route::resource('registro10', RiesgosController::class);
 
 });

@@ -59,7 +59,7 @@ class RiesgosController extends Controller
                 ]);
         
                 Alert::success('Éxito', 'Registro creado con éxito');
-                return redirect()->route('riesgos.index');
+                return redirect()->route('registro10.index');
     }
 
     /**
@@ -115,7 +115,7 @@ class RiesgosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro actualizado con éxito');
-        return redirect()->route('riesgos.index');
+        return redirect()->route('registro10.index');
     }
 
     /**
@@ -129,6 +129,6 @@ class RiesgosController extends Controller
         $riesgo = Risk::findOrFail($id);
         $riesgo->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('riesgos.index');
+        return redirect()->route('registro10.index');
     }
 }

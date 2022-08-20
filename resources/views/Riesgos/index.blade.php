@@ -11,7 +11,7 @@
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('riesgos.create')}}" class="btn btn-primary mr-3">
+                <a href="{{route('registro10.create')}}" class="btn btn-primary mr-3">
                     <i class="fa-solid fa-plus"></i>
                     Agregar Registro
                 </a>
@@ -62,9 +62,9 @@
                                 </td>
                                 <td>
                                 <div class="d-flex">
-                                        <a href="{{route('riesgos.show',$riesgo->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
-                                        <a href="{{route('riesgos.edit',$riesgo->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
-                                        <form action="{{route('riesgos.destroy',$riesgo->id)}} "method="POST">
+                                        <a href="{{route('registro10.show',$riesgo->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('registro10.edit',$riesgo->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
+                                        <form action="{{route('registro10.destroy',$riesgo->id)}} "method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
