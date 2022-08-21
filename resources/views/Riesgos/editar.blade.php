@@ -26,7 +26,7 @@
                     @csrf
                     <div class="card-body">
 
-                        <h4 class="mb-5 font-weight-semibold">Edita del riesgo {{$riesgo->id}}</h4>
+                        <h4 class="mb-5 font-weight-semibold">Edita el registro {{$riesgo->id}}</h4>
                         <div class="row">                         
                             <div class="col-md-4">
                                 <div class="form-group">

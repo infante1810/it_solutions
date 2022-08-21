@@ -26,7 +26,7 @@
 				@method('PATCH')
 				@csrf
 			<div class="card-body">
-				<h4 class="mb-5 font-weight-semibold">Editar el registro</h4>
+				<h4 class="mb-5 font-weight-semibold">Editar el registro {{$project->id}}</h4>
 				<div class="row">
 					{{-- Nombre del evento --}}
 					<div class="col-md-3">
