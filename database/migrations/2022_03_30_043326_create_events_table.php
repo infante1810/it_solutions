@@ -17,8 +17,9 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('location');
-            $table->date('start_date');
+            //$table->string('location');
+            $table->decimal('total_cost', 12, 2)->default(0.00);
+            //$table->integer('views_counter')->default(0);
             $table->decimal('user_id', 12, 0)->default(0);
             //$table->foreignId('user_id')->constrained();
             $table->timestamps();

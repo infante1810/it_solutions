@@ -16,7 +16,7 @@ class EventosController extends Controller
      */
     public function index()
     {
-        $eventos = Event::all();
+        $eventos = Event::with('user')->get();
         return view('Eventos.index', get_defined_vars());
     }
 
@@ -41,17 +41,20 @@ class EventosController extends Controller
         $request->validate([
            'name' => 'required|max:255',
            'description' => 'nullable|max:255',
-           'location' => 'required|max:255',
-           'start_date' => 'required|date',
+           //'location' => 'required|max:255',
+           'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+           
         ]);
 
-        Event::create([
+        $eventos = Event::create([
             'name'         => $request['name'],
             'description'   => $request['description'],
-            'location'   => $request['location'],
-            'user_id'       => 1,
-            'start_date'     => $request['start_date'],
+            //'location'   => $request['location'],
+            'total_cost'    => $request['total_cost'],
+            'user_id'       =>  $request['user_id'],
+            //'start_date'     => $request['start_date'],
         ]);
+
         Alert::success('Éxito', 'Evento guardado con éxito');
         return redirect()->route('eventos.index');
     }
@@ -64,7 +67,8 @@ class EventosController extends Controller
      */
     public function show($id)
     {
-        return view('Eventos.ver');
+        $eventos= Event::findOrFail($id);
+        return view('Eventos.ver',get_defined_vars());
     }
 
     /**
@@ -75,7 +79,7 @@ class EventosController extends Controller
      */
     public function edit($id)
     {
-        $evento = Event::findOrFail($id);
+        $eventos = Event::findOrFail($id);
         return view('Eventos.editar',get_defined_vars());
     }
 
@@ -88,15 +92,27 @@ class EventosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $eventos = Event::findOrFail($id);
-        $eventos->update([
-            'name'         => $request['name'],
-            'description'   => $request['description'],
-            'location'   => $request['location'],
-            'user_id'       => 1,
-            'start_date'     => $request['start_date'],
+        $request->validate([
+            'name'         => 'required|max:255',
+            'description'   => 'required|max:255',
+            //'location'   => $request['location'],
+            'total_cost'       =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'start_date'     => $request['start_date'],
+            //'user_id'           =>  $request['user_id'],
         ]);
-        // Alert::success('Éxito', 'Evento actualizado con éxito');
+
+        $eventos = Event::findOrFail($id);
+
+        $eventos->update([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
+
+        Alert::success('Éxito', 'Evento actualizado con éxito');
         return redirect()->route('eventos.index');
     }
 
@@ -110,7 +126,7 @@ class EventosController extends Controller
     {
         $eventos = Event::findOrFail($id);
         $eventos->delete();
-        // Alert::success('Éxito', 'Evento eliminado con éxito');
+        Alert::success('Éxito', 'Evento eliminado con éxito');
         return redirect()->route('eventos.index');
     }
 }
