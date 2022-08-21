@@ -5,7 +5,7 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-    <h4 class="page-title">Ver  registro</h4>
+    <h4 class="page-title">Ver  registro #{{$model->id}}</h4>
         <ul class="breadcrumb">
             <li class="mb-1 fs-16"><a href="{{ route('registro2.index') }}">Registro 2</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
