@@ -5,14 +5,14 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Eventos</h4>
+        <h4 class="page-title">Registros 7</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('eventos.create')}}" class="btn btn-primary mr-3">
+                <a href="{{route('registro7.create')}}" class="btn btn-primary mr-3">
                     <i class="fa-solid fa-plus"></i>
-                    Agregar evento
+                    Agregar Registro
                 </a>
             </div>
         </div>
@@ -27,16 +27,18 @@
 <div class="row">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table  table-vcenter text-wrap table-bordered border-bottom dt" id="project-list">
+            <div class="card-header border-0">
+             <h4 class="card-title">Lista de productos/servicios</h4>
+                </div>
+                <div class="card-body">
+                   <div class="table-responsive">
+                    <table class="table  table-vcenter text-wrap table-bordered border-bottom dt" id="tabla">
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">ID</th>
-                                <th class="border-bottom-0">Nombre</th>
+                                <th class="border-bottom-0">Servicio/Producto</th>
                                 <th class="border-bottom-0">Descripción</th>
-                                <th class="border-bottom-0">Dirección</th>
-                                <th class="border-bottom-0">Fecha</th>
+                                <th class="border-bottom-0">Costos</th>
                                 <th class="border-bottom-0" Style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
@@ -52,24 +54,16 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="d-flex">
-                                        <div class="mr-3 mt-0 mt-sm-1 d-block">
-                                            <h6 class="mb-1 fs-14">{{$evento->description}}</h6>
-                                        </div>
-                                    </div>
+                                    <span>{{$evento->description}}</span>
                                 </td>
                                 <td>
-                                    <span>
-                                        {{$evento->location}}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span>{{$evento->start_date}}</span>
+                                    <span> {{$evento->total_cost}}</span>
                                 </td>
                                 <td>
                                 <div class="d-flex">
-                                        <a href="{{route('eventos.edit',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen text-success"></i></a>
-                                        <form action="{{route('eventos.destroy', $evento->id)}}" method="post">
+                                        <a href="{{route('registro7.show',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('registro7.edit',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
+                                        <form action="{{route('registro7.destroy', $evento->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa fa-trash-o text-danger"></i></button>
@@ -87,3 +81,44 @@
 </div>
 <!-- FIN CONTENIDO -->
 @endsection
+@section('extra-script')
+<script type="text/javascript">
+    function mensaje(){
+        const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-outline-dark'
+          },
+          buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+          title: '¿Eliminar registro?',
+          text: "Si eliminas a este registro se eliminará permanentemente del sistema.",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Si, eliminar registro!.',
+          cancelButtonText: 'No, mantener registro!.',
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+              'Eliminado!',
+              'El registro se ha eliminado correctamente.',
+              'success'
+            )
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire(
+              'Proceso cancelado.',
+              '',
+              'error'
+            )
+          }
+        })
+    }
+</script>
+@endsection
+
