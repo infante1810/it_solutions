@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">REGISTRO 1</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('contratos.index') }}">Registro1</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('contratos.index') }}">Registro 6</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Agregar Registro</li>
         </ul>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
