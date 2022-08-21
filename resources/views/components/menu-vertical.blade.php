@@ -73,7 +73,7 @@
 			</li> -->
 
 			<li class="slide">
-				<a class="side-menu__item {{ Request::is('eventos') ? 'active' : '' }}" data-toggle="slide" href="{{route('eventos.index')}}" id="eventos">
+				<a class="side-menu__item {{ Request::is('registro7') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro7.index')}}" id="eventos">
 					<i class="fa-solid fa-calendar-day mr-2"></i>
 					<span class="side-menu__label">Area 7</span>
 				</a>

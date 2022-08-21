@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group( function () {
     Route::resource('contactos', ContactosController::class);
     Route::resource('registro6', ContratosController::class);
     Route::resource('departamentos', DepartamentosController::class);
-    Route::resource('eventos', EventosController::class);
+    Route::resource('registro7', EventosController::class);
     Route::resource('empleados', EmpleadosController::class);
     Route::resource('registro2', ModelosController::class);
     Route::resource('preguntas', PreguntasController::class);

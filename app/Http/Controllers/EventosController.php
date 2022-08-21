@@ -56,7 +56,7 @@ class EventosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Evento guardado con éxito');
-        return redirect()->route('eventos.index');
+        return redirect()->route('registro7.index');
     }
 
     /**
@@ -113,7 +113,7 @@ class EventosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Evento actualizado con éxito');
-        return redirect()->route('eventos.index');
+        return redirect()->route('registro7.index');
     }
 
     /**
@@ -127,6 +127,6 @@ class EventosController extends Controller
         $eventos = Event::findOrFail($id);
         $eventos->delete();
         Alert::success('Éxito', 'Evento eliminado con éxito');
-        return redirect()->route('eventos.index');
+        return redirect()->route('registro7.index');
     }
 }

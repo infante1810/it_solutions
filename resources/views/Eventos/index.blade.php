@@ -10,7 +10,7 @@
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('eventos.create')}}" class="btn btn-primary mr-3">
+                <a href="{{route('registro7.create')}}" class="btn btn-primary mr-3">
                     <i class="fa-solid fa-plus"></i>
                     Agregar Registro
                 </a>
@@ -61,9 +61,9 @@
                                 </td>
                                 <td>
                                 <div class="d-flex">
-                                        <a href="{{route('eventos.show',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
-                                        <a href="{{route('eventos.edit',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
-                                        <form action="{{route('eventos.destroy', $evento->id)}}" method="post">
+                                        <a href="{{route('registro7.show',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('registro7.edit',$evento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
+                                        <form action="{{route('registro7.destroy', $evento->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa fa-trash-o text-danger"></i></button>
