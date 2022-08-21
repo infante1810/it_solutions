@@ -57,7 +57,7 @@ class ContratosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro guardado con éxito');
-        return redirect()->route('contratos.index');
+        return redirect()->route('registro6.index');
     }
 
     /**
@@ -115,7 +115,7 @@ class ContratosController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro actualizado con éxito');
-        return redirect()->route('contratos.index');
+        return redirect()->route('registro6.index');
 
     }
 
@@ -130,6 +130,6 @@ class ContratosController extends Controller
         $contrato = Contract::findOrFail($id);
         $contrato->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('contratos.index');
+        return redirect()->route('registro6.index');
     }
 }

@@ -59,7 +59,7 @@
 			</li>-->
 
             <li class="slide">
-				<a class="side-menu__item {{ Request::is('contratos') ? 'active' : ''}}" data-toggle="slide" href="{{route('contratos.index')}}" id="contratos">
+				<a class="side-menu__item {{ Request::is('contratos') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro6.index')}}" id="contratos">
 					<i class="fa-solid fa-file-contract mr-2"></i>
 					<span class="side-menu__label">Area 6</span>
 				</a>
