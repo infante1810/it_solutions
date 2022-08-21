@@ -141,10 +141,7 @@
 
                         <div class="row">
                             <div class="col-md-5">
-                                <div class="form-group">
-                                    <label for="department" class="form-label">Departamento</label>
-                                    <input id="department" class="form-control" disabled value="{{ $department->name }}">
-                                </div>
+                                
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
