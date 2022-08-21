@@ -24,7 +24,7 @@
                     <form action="{{route('registro10.store')}}" method = "POST">
                         @csrf
                     <div class="card-body">
-                        <h4 class="mb-5 font-weight-semibold">Información del riesgo</h4>
+                        <h4 class="mb-5 font-weight-semibold">Crea un registro</h4>
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
