@@ -5,11 +5,11 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Editar evento</h4>
+        <h4 class="page-title">Editar registro</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('eventos.index') }}">Eventos</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('eventos.index') }}">Registro 7</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
-            <li class="text-muted mb-1 fs-16">Editar eventos</li>
+            <li class="text-muted mb-1 fs-16">Editar registro</li>
         </ul>
     </div>
 </div>

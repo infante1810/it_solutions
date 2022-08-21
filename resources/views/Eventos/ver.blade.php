@@ -5,9 +5,9 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Ver registro</h4>
+        <h4 class="page-title">Ver  registro #{{$eventos->id}}</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('eventos.index')}}">Nombre modulo</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('eventos.index')}}">Registros 7</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Ver registro</li>
         </ul>
