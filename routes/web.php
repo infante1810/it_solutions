@@ -49,7 +49,7 @@ Route::middleware(['auth'])->group( function () {
 
     Route::resource('registro1', AnunciosController::class);
     Route::resource('registro3', BasesDatosController::class);
-    Route::resource('comentarios', ComentariosController::class);
+    Route::resource('registro4', ComentariosController::class);
     Route::resource('contactos', ContactosController::class);
     Route::resource('registro6', ContratosController::class);
     Route::resource('departamentos', DepartamentosController::class);

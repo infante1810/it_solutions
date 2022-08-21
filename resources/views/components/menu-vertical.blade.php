@@ -38,7 +38,7 @@
 
 
             <li class="slide">
-				<a class="side-menu__item {{ Request::is('comentarios') ? 'active' : ''}}" data-toggle="slide" href="{{route('comentarios.index')}}" id="comentarios">
+				<a class="side-menu__item {{ Request::is('comentarios') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro4.index')}}" id="comentarios">
 					<i class="fa-solid fa-comment mr-2"></i>
 					<span class="side-menu__label">Area 4</span>
 				</a>
