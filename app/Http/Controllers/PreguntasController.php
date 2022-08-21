@@ -16,7 +16,7 @@ class PreguntasController extends Controller
     public function index()
     {
         // $preguntas = Question::with('answers')->get();
-        $preguntas = Question::with('answers')->paginate(5);
+        $preguntas = Question::with('user')->get();
         // $preguntas = Question::paginate(5);
         return view('Preguntas.index',get_defined_vars());
     }
@@ -28,8 +28,7 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-        $preguntas = Question::get();
-        return view('Preguntas.crear',get_defined_vars());
+        return view('Preguntas.crear');
     }
 
     /**
@@ -44,16 +43,19 @@ class PreguntasController extends Controller
             'name'          =>  'required|max:255',
             'description'   =>  'required|max:255',
             //'user_id'       =>  'required|numeric',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+
         ]);
 
         $pregunta = Question::create([
             'name'              =>  $request['name'],
             'description'       =>  $request['description'],
+            'total_cost'        =>  $request['total_cost'],
             // 'user_id'           =>  auth()->user()->id,
-            'user_id'           =>  1,
+            'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Pregunta creado con éxito');
+        Alert::success('Éxito', 'Registro creado con éxito');
         return redirect()->route('preguntas.index');
     }
 
@@ -95,6 +97,7 @@ class PreguntasController extends Controller
         $request->validate([
             'name'          =>  'required|max:255',
             'description'   =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
             //'user_id'       =>  'required|numeric',
         ]);
 
@@ -103,10 +106,12 @@ class PreguntasController extends Controller
         $pregunta->update([
             'name'              =>  $request['name'],
             'description'       =>  $request['description'],
+            'total_cost'        =>  $request['total_cost'],
+            'user_id'           =>  $request['user_id'],
             //'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Pregunta actualizada con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('preguntas.index');
     }
 
@@ -120,7 +125,7 @@ class PreguntasController extends Controller
     {
         $pregunta = Question::findOrFail($id);
         $pregunta->delete();
-        Alert::success('Éxito', 'Pregunta eliminada con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('preguntas.index');
     }
 }

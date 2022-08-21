@@ -17,6 +17,7 @@ class Question extends Model
     protected $fillable = [
         'name',
         'description',
+        'total_cost',
         'user_id',
     ];
 
@@ -49,8 +50,8 @@ class Question extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function answers()
-    {
-        return $this->hasMany('App\Models\Answer');
-    }
+    //public function answers()
+    //{
+    //    return $this->hasMany('App\Models\Answer');
+    //}
 }

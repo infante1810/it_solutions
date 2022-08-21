@@ -16,7 +16,8 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
+            $table->decimal('total_cost', 12, 2)->default(0.00);
             $table->decimal('user_id', 12, 0)->default(0);
             //$table->foreignId('user_id')->constrained();
             $table->timestamps();
