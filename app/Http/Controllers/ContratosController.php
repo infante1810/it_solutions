@@ -17,7 +17,7 @@ class ContratosController extends Controller
      */
     public function index()
     {
-        $contratos = Contract::with('status', 'type_contract')->get();
+        $contratos = Contract::with('user')->get();
         return view('Contratos.index',get_defined_vars());
     }
 
@@ -28,12 +28,7 @@ class ContratosController extends Controller
      */
     public function create()
     {
-        $statuses = Status::all();
-        $type_contracts = TypeContract::all();
-        return view('Contratos.crear', [
-            'statuses' => $statuses,
-            'type_contracts' => $type_contracts
-        ]);
+        return view('Anuncios.crear');
     }
 
     /**
@@ -45,17 +40,23 @@ class ContratosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'subject'           =>  'required|max:255',
-            'description'       =>  'required|max:255',
-            'initiated_by'      =>  'required|max:255',
-            'start_date'        =>  'required|date',
-            'end_date'          =>  'required|date',
-            'status_id'         =>  'required|numeric',
-            'type_contract_id'  =>  'required|numeric',
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
-        $contrato = Contract::create($request->all());
-        Alert::success('Éxito', 'Contrato guardado con éxito');
+        $contrato = Contract::create([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
+
+        Alert::success('Éxito', 'Registro guardado con éxito');
         return redirect()->route('contratos.index');
     }
 
@@ -68,13 +69,8 @@ class ContratosController extends Controller
     public function show($id)
     {
         $contrato = Contract::findOrFail($id);
-        $statuses = Status::all();
-        $type_contracts = TypeContract::all();
-        return view('Contratos.ver', [
-            'contrato' => $contrato,
-            'statuses' => $statuses,
-            'type_contracts' => $type_contracts
-        ]);
+        
+        return view('Contratos.ver',get_defined_vars());
     }
 
     /**
@@ -86,13 +82,8 @@ class ContratosController extends Controller
     public function edit($id)
     {
         $contrato = Contract::findOrFail($id);
-        $statuses = Status::all();
-        $type_contracts = TypeContract::all();
-        return view('Contratos.editar', [
-            'contrato' => $contrato,
-            'statuses' => $statuses,
-            'type_contracts' => $type_contracts
-        ]);
+        
+        return view('Contratos.editar', get_defined_vars());
     }
 
     /**
@@ -106,18 +97,24 @@ class ContratosController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'subject'           =>  'required|max:255',
-            'description'       =>  'required|max:255',
-            'initiated_by'      =>  'required|max:255',
-            'start_date'        =>  'required|date',
-            'end_date'          =>  'required|date',
-            'status_id'         =>  'required|numeric',
-            'type_contract_id'  =>  'required|numeric',
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
         $contrato = Contract::findOrFail($id);
-        $contrato->update($request->all());
-        Alert::success('Éxito', 'Contrato actualizado con éxito');
+        $contrato->update([
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
+        ]);
+
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('contratos.index');
 
     }
@@ -132,7 +129,7 @@ class ContratosController extends Controller
     {
         $contrato = Contract::findOrFail($id);
         $contrato->delete();
-        Alert::success('Éxito', 'Contrato eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('contratos.index');
     }
 }

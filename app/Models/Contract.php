@@ -15,13 +15,12 @@ class Contract extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'subject',
+        'name',
         'description',
-        'initiated_by',
-        'start_date',
-        'end_date',
-        'status_id',
-        'type_contract_id',
+        //'location',
+        'total_cost',
+        //'views_counter',
+        'user_id',
     ];
 
     /**
@@ -43,28 +42,32 @@ class Contract extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function status()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Status');
+        return $this->belongsTo('App\Models\User');
     }
+    // public function status()
+    // {
+    //     return $this->belongsTo('App\Models\Status');
+    // }
 
-    /**
-     * Get the TypeContract that owns the Contract
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function type_contract()
-    {
-        return $this->belongsTo('App\Models\TypeContract');
-    }
+    // /**
+    //  * Get the TypeContract that owns the Contract
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  */
+    // public function type_contract()
+    // {
+    //     return $this->belongsTo('App\Models\TypeContract');
+    // }
 
-    /**
-     * Get the projects that own the Contract
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function projects()
-    {
-        return $this->hasMany('App\Models\Project');
-    }
+    // /**
+    //  * Get the projects that own the Contract
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    //  */
+    // public function projects()
+    // {
+    //     return $this->hasMany('App\Models\Project');
+    // }
 }

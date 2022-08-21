@@ -2,48 +2,43 @@
 
 @section('content')
 
-<!-- CABECERA -->
+
+<!--Page header-->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Contratos</h4>
+        <h4 class="page-title">Registros 6</h4>
     </div>
-    {{-- DESCOMENTAR DIV PARA MOSTRAR BOTON DE AGREGAR --}}
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{ route('contratos.create') }}" class="btn btn-primary mr-3">
+                <a href="{{route('contratos.create')}}" class="btn btn-primary mr-3">
                     <i class="fa-solid fa-plus"></i>
-                    Agregar Contrato
+                    Agregar Registro
                 </a>
             </div>
         </div>
     </div>
 </div>
-<!-- FIN CABECERA -->
-
-
+<!--End Page header-->
 
 
 <!-- CONTENIDO -->
+
 <div class="row">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-header  border-0">
-                <h4 class="card-title">Lista de Contratos</h4>
+                <h4 class="card-title">Lista de productos/servicios</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table  table-vcenter text-wrap table-bordered border-bottom dt" id="project-list">
+                    <table class="table table-vcenter text-wrap table-bordered border-bottom dt" id="tabla">
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">ID</th>
-                                <th class="border-bottom-0">Asunto</th>
+                                <th class="border-bottom-0">Servicio/Producto</th>
                                 <th class="border-bottom-0">Descripcion</th>
-                                <th class="border-bottom-0">Iniciado por</th>
-                                <th class="border-bottom-0">Fecha de inicio</th>
-                                <th class="border-bottom-0">Fecha de finalizacion</th>
-                                <th class="border-bottom-0">Estado</th>
-                                <th class="border-bottom-0">Tipo de contrato</th>
+                                <th class="border-bottom-0">Costos</th>
                                 <th class="border-bottom-0" Style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
@@ -51,16 +46,18 @@
                             @foreach ($contratos as $contrato)
                             <tr>
                                 <td>{{$contrato->id}}</td>
-                                <td>{{$contrato->subject}}</td>
-                                <td>{{$contrato->description}}</td>
-                                <td>{{$contrato->initiated_by}}</td>
-                                <td>{{$contrato->start_date}}</td>
-                                <td>{{$contrato->end_date}}</td>
                                 <td>
-                                    <span class="badge rounded-pill bg-info text-dark">{{$contrato->description}}</span>
+                                    <div class="d-flex">
+                                        <div class="mr-3 mt-0 mt-sm-1 d-block">
+                                            <h6 class="mb-1 fs-14">{{$contrato->name}}</h6>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td>
-                                    <span class="badge rounded-pill bg-success">{{$contrato->description}}</span>
+                                    <span>{{$contrato->description}}</span>
+                                </td>
+                                <td>
+                                    <span>{{$contrato->total_cost}}</span>
                                 </td>
                                 <td>
                                     <div class="d-flex">
@@ -69,7 +66,7 @@
                                         <form action="{{route('contratos.destroy', $contrato->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="action-btns1" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
+                                            <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                         </form>
                                     </div>
                                 </td>
@@ -99,18 +96,18 @@
         })
 
         swalWithBootstrapButtons.fire({
-          title: '¿Eliminar Contrato?',
-          text: "Si eliminas este contrato se eliminará permanentemente del sistema.",
+          title: '¿Eliminar registro?',
+          text: "Si eliminas a este registro se eliminará permanentemente del sistema.",
           icon: 'warning',
           showCancelButton: true,
-          confirmButtonText: 'Si, eliminar Contrato!.',
-          cancelButtonText: 'No, mantener Contrato!.',
+          confirmButtonText: 'Si, eliminar registro!.',
+          cancelButtonText: 'No, mantener registro!.',
           reverseButtons: true
         }).then((result) => {
           if (result.isConfirmed) {
             swalWithBootstrapButtons.fire(
               'Eliminado!',
-              'El Contrato se ha eliminado correctamente.',
+              'El registro se ha eliminado correctamente.',
               'success'
             )
           } else if (
