@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Comment extends Model
 {
     use HasFactory;
@@ -15,7 +16,12 @@ class Comment extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'body',
+        'name',
+        'description',
+        //'location',
+        //'views_counter',
+        'total_cost',
+        //'body',
         'user_id',
     ];
 

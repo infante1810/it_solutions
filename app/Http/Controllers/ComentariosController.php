@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
+// use Illuminate\Support\Arr;
 use App\Models\Comment;
-use App\Models\Department;
-use App\Models\User;
-use Carbon\Carbon;
+//se App\Models\Department;
+// use App\Models\User;
+// use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ComentariosController extends Controller
@@ -21,17 +21,8 @@ class ComentariosController extends Controller
      */
     public function index()
     {
-        $comentarios = Comment::with('user')->paginate(5);
-
-        foreach ($comentarios as $comentario) {
-            $hora = Carbon::createFromFormat('Y-m-d H:i:s', $comentario->created_at)->format('H:m A');
-            $dia = Carbon::createFromFormat('Y-m-d H:i:s', $comentario->created_at)->format('d M');
-
-            $comentario = Arr::add($comentario, 'hora', $hora);
-            $comentario = Arr::add($comentario, 'dia', $dia);
-        }
-
-        return view('Comentarios.index',get_defined_vars());
+        $comentario = Comment::with('user')->get();
+        return view('comentarios.index',get_defined_vars());
     }
 
     /**
@@ -43,7 +34,7 @@ class ComentariosController extends Controller
      */
     public function create()
     {
-        return view('Comentarios.crear');
+        return view('comentarios.crear');
     }
 
    /**
@@ -57,18 +48,25 @@ class ComentariosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'body'          =>  'required|max:255',
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
         //TODO: fix user_id to auth()->id
         $comentario = Comment::create([
-            'body'              =>  $request['body'],
-            // 'user_id'           =>  auth()->user()->id,
-            'user_id'           =>  1,
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
         ]);
 
 
 
-        Alert::success('Éxito', 'Comentario agregado con éxito');
+        Alert::success('Éxito', 'Registro agregado con éxito');
         return redirect()->route('comentarios.index');
     }
 
@@ -82,8 +80,8 @@ class ComentariosController extends Controller
      */
     public function show($id)
     {
-        $comentario = Comment::with('user')->findOrFail($id);
-        return view('Comentarios.ver',get_defined_vars());
+        $comentario = Comment::findOrFail($id);
+        return view('comentarios.ver',get_defined_vars());
     }
 
     /**
@@ -96,9 +94,10 @@ class ComentariosController extends Controller
      */
     public function edit($id)
     {
-        $users = User::get();
+        
+       // dd($comentario);
         $comentario = Comment::findOrFail($id);
-        return view('Comentarios.editar', get_defined_vars());
+        return view('comentarios.editar', get_defined_vars());
     }
 
     /**
@@ -113,18 +112,27 @@ class ComentariosController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'body'          =>  'required|max:255',
-            'user_id'       =>  'required|numeric',
+            'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
+            //'views_counter'  =>  'required|numeric|gt:0',
         ]);
 
         $comentario = Comment::findOrFail($id);
 
         $comentario->update([
-            'body'              =>  $request['body'],
-            'user_id'           =>  $request['user_id'],
+            'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+         //   'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+         //   'views_counter'     =>  $request['views_counter']
+         'user_id'           =>  $request['user_id'],
+            
+            
         ]);
         //TODO: fix user_id to auth()->id
-        Alert::success('Éxito', 'Comentario actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('comentarios.index');
     }
 
@@ -140,7 +148,7 @@ class ComentariosController extends Controller
     {
         $comentario = Comment::findOrFail($id);
         $comentario->delete();
-        Alert::success('Éxito', 'Comentario eliminada con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('comentarios.index');
     }
 }
