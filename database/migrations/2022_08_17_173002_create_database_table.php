@@ -33,6 +33,6 @@ class CreateDatabaseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('database');
+        Schema::dropIfExists('databases');
     }
 }

@@ -15,20 +15,7 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        Department::factory()->count(11)->create(
-            new Sequence(
-                ['name' => 'Dirección General'],
-                ['name' => 'Finanzas'],
-                ['name' => 'Mercadotecnia'],
-                ['name' => 'Comunicaciones'],
-                ['name' => 'Gestión, planificación y estrategia de servicios'],
-                ['name' => 'Atención a clientes y usuarios'],
-                ['name' => 'Control de riesgos'],
-                ['name' => 'Negocios y apliaciones empresariales'],
-                ['name' => 'Desarrollo y nuevas tecnologías'],
-                ['name' => 'Sistemas e infraestructuras'],
-                ['name' => 'Recursos humanos'],
-                )
-        );
+        Department::factory()->count(10)->create();
+
     }
 }
