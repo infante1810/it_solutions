@@ -48,7 +48,7 @@
                                 <span class="avatar avatar-xl brround mr-3" style="background-image: url({{asset('images/estefania.jpg')}}"></span>
                             </div>
                             <div>
-                                <div class="row fs-4 primary-font">DE LA FUENTE FLORES ESTEFANIA </div>
+                                <div class="row fs-4 primary-font">DE LA FUENTE FLORES </br> ESTEFANIA </div>
                                 <div class="row text-muted">1930019</div>
                                 <div class="row">1930019@upv.edu.mx</div>
                                 <div class="row">Owner Area 9</div>
