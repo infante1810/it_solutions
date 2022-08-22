@@ -49,14 +49,14 @@ Route::middleware(['auth'])->group( function () {
 
     Route::resource('registro1', AnunciosController::class);
     Route::resource('registro3', BasesDatosController::class);
-    Route::resource('comentarios', ComentariosController::class);
+    Route::resource('registro4', ComentariosController::class);
     Route::resource('contactos', ContactosController::class);
     Route::resource('registro6', ContratosController::class);
     Route::resource('departamentos', DepartamentosController::class);
     Route::resource('registro7', EventosController::class);
     Route::resource('empleados', EmpleadosController::class);
     Route::resource('registro2', ModelosController::class);
-    Route::resource('preguntas', PreguntasController::class);
+    Route::resource('registro8', PreguntasController::class);
     // Route::resource('respuestas', RespuestasController::class);
     Route::resource('registro9', ProyectosController::class);
     Route::resource('registro10', RiesgosController::class);

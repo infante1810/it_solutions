@@ -67,7 +67,7 @@ class ComentariosController extends Controller
 
 
         Alert::success('Éxito', 'Registro agregado con éxito');
-        return redirect()->route('comentarios.index');
+        return redirect()->route('registro4.index');
     }
 
     /**
@@ -133,7 +133,7 @@ class ComentariosController extends Controller
         ]);
         //TODO: fix user_id to auth()->id
         Alert::success('Éxito', 'Registro actualizado con éxito');
-        return redirect()->route('comentarios.index');
+        return redirect()->route('registro4.index');
     }
 
     /**
@@ -149,6 +149,6 @@ class ComentariosController extends Controller
         $comentario = Comment::findOrFail($id);
         $comentario->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('comentarios.index');
+        return redirect()->route('registro4.index');
     }
 }
