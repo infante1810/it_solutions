@@ -69,15 +69,18 @@ Route::middleware(['auth'])->group( function () {
     
     
     Route::resource('empleados', EmpleadosController::class);
-    Route::resource('registro2', ModelosController::class);
     Route::get('/registro2/generatePDF', [ModelosController::class, 'generatePDF'])->name('registro2.generatePDF');
+    Route::resource('registro2', ModelosController::class);
+    
 
-    Route::resource('registro8', PreguntasController::class);
     Route::get('/registro8/generatePDF', [PreguntasController::class, 'generatePDF'])->name('registro8.generatePDF');
+    Route::resource('registro8', PreguntasController::class);
+    
     
     // Route::resource('respuestas', RespuestasController::class);
-    Route::resource('registro9', ProyectosController::class);
     Route::get('/registro9/generatePDF', [ProyectosController::class, 'generatePDF'])->name('registro9.generatePDF');
+    Route::resource('registro9', ProyectosController::class);
+    
 
     Route::get('/registro10/generatePDF', [RiesgosController::class, 'generatePDF'])->name('registro10.generatePDF');
     Route::resource('registro10', RiesgosController::class);

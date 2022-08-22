@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use App\Models\Project;
-use App\Models\Task;
-use App\Models\Contract;
-use App\Models\User;
-use App\Models\Customer;
 use RealRashid\SweetAlert\Facades\Alert;
-use Barryvdh\DomPDF\Facade\Pdf;
+use PDF;
 
 class ProyectosController extends Controller
 {
@@ -143,6 +138,21 @@ class ProyectosController extends Controller
         $project->delete();
         Alert::success('Éxito', 'Proyecto eliminado con éxito');
         return redirect()->route('registro9.index');
+    }
+
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Project::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 9";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 
 }

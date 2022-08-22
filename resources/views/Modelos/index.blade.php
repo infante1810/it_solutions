@@ -10,8 +10,19 @@
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('registro2.create')}}" class="btn btn-primary mr-3">Agregar Registro</a>
+                <a href="{{route('registro2.create')}}" class="btn btn-primary mr-3">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar Registro
+                </a>
             </div>
+            <!--COPIAR DESDE AQUI-->
+            <div class="btn-list">
+                <a href="{{route('registro2.generatePDF')}}" class="btn btn-primary mr-3">
+                    <i class="fa-thin fa-file-arrow-down"></i>
+                    Reporte PDF
+                </a>
+            </div>
+            <!--HASTA AQUI-->
         </div>
     </div>
 </div>

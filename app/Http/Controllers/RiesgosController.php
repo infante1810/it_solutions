@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Risk;
 use RealRashid\SweetAlert\Facades\Alert;
 // use RealRashid\SweetAlert\Facade\Alert;
+use PDF;
 
 class RiesgosController extends Controller
 {
@@ -130,5 +131,19 @@ class RiesgosController extends Controller
         $riesgo->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro10.index');
+    }
+
+    public function generatePDF()
+    {
+        $variables = Risk::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 10";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }

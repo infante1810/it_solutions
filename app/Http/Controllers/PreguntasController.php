@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class PreguntasController extends Controller
 {
@@ -127,5 +128,20 @@ class PreguntasController extends Controller
         $pregunta->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro8.index');
+    }
+
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Question::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 8";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }

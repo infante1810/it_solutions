@@ -15,6 +15,14 @@
                     Agregar Registro
                 </a>
             </div>
+            <!--COPIAR DESDE AQUI-->
+            <div class="btn-list">
+                <a href="{{route('registro7.generatePDF')}}" class="btn btn-primary mr-3">
+                    <i class="fa-thin fa-file-arrow-down"></i>
+                    Reporte PDF
+                </a>
+            </div>
+            <!--HASTA AQUI-->
         </div>
     </div>
 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Event;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 
 class EventosController extends Controller
@@ -128,5 +129,20 @@ class EventosController extends Controller
         $eventos->delete();
         Alert::success('Éxito', 'Evento eliminado con éxito');
         return redirect()->route('registro7.index');
+    }
+
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Event::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 7";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }

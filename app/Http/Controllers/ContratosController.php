@@ -7,6 +7,7 @@ use App\Models\Contract;
 use App\Models\TypeContract;
 use App\Models\Status;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class ContratosController extends Controller
 {
@@ -131,5 +132,19 @@ class ContratosController extends Controller
         $contrato->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro6.index');
+    }
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Contract::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 6";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }

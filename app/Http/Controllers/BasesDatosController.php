@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Database;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 
 class BasesDatosController extends Controller
@@ -132,5 +133,20 @@ class BasesDatosController extends Controller
         $database->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro3.index');
+    }
+
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Database::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 3";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }

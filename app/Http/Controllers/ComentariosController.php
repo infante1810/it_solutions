@@ -9,6 +9,7 @@ use App\Models\Comment;
 // use App\Models\User;
 // use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class ComentariosController extends Controller
 {
@@ -150,5 +151,20 @@ class ComentariosController extends Controller
         $comentario->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro4.index');
+    }
+
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Comment::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 4";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }
