@@ -5,7 +5,7 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Ver  registro</h4>
+        <h4 class="page-title">Ver  registro #{{$comentario->id}}</h4>
         <ul class="breadcrumb">
             <li class="mb-1 fs-16"><a href="{{ route('registro4.index') }}">Registros 4</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
