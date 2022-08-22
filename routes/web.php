@@ -49,21 +49,24 @@ Route::middleware(['auth'])->group( function () {
     Route::get('/registro1/generatePDF', [AnunciosController::class, 'generatePDF'])->name('registro1.generatePDF');
     Route::resource('registro1', AnunciosController::class);
 
-    Route::resource('registro3', BasesDatosController::class);
     Route::get('/registro3/generatePDF', [BasesDatosController::class, 'generatePDF'])->name('registro3.generatePDF');
+    Route::resource('registro3', BasesDatosController::class);
     
-    Route::resource('registro4', ComentariosController::class);
     Route::get('/registro4/generatePDF', [ComentariosController::class, 'generatePDF'])->name('registro4.generatePDF');
+    Route::resource('registro4', ComentariosController::class);
+    
     
     Route::resource('contactos', ContactosController::class);
-    Route::resource('registro6', ContratosController::class);
     Route::get('/registro6/generatePDF', [ContratosController::class, 'generatePDF'])->name('registro6.generatePDF');
-
-    Route::resource('departamentos', DepartamentosController::class);
-    Route::get('/registro5/generatePDF', [DepartamentosController::class, 'generatePDF'])->name('registro5.generatePDF');
+    Route::resource('registro6', ContratosController::class);
     
-    Route::resource('registro7', EventosController::class);
+    Route::get('/registro5/generatePDF', [DepartamentosController::class, 'generatePDF'])->name('registro5.generatePDF');
+    Route::resource('departamentos', DepartamentosController::class);
+    
+    
     Route::get('/registro7/generatePDF', [EventosController::class, 'generatePDF'])->name('registro7.generatePDF');
+    Route::resource('registro7', EventosController::class);
+    
     
     Route::resource('empleados', EmpleadosController::class);
     Route::resource('registro2', ModelosController::class);
