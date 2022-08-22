@@ -90,7 +90,7 @@
                 <div class="col-5 mb-5 p-5 bg-white rounded shadow ml-7">
                         <div class="d-flex">
                             <div class="mr-3 mt-0 mt-sm-1 d-block">
-                                <span class="avatar avatar-xl brround mr-3" style="background-image: url({{asset('images/usuario.png')}}"></span>
+                                <span class="avatar avatar-xl brround mr-3" style="background-image: url({{asset('images/JQuinones.jpg')}}"></span>
                             </div>
                             <div>
                                 <div class="row fs-4 primary-font">QUIÑONES MATA </br> JESUS EDUARDO</div>
