@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
-use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class DepartamentosController extends Controller
@@ -18,7 +17,7 @@ class DepartamentosController extends Controller
      */
     public function index()
     {
-        $departamentos = Department::get();
+        $departamentos = Department::with('user')->get();
         return view('Departamentos.index',get_defined_vars());
     }
 
@@ -46,13 +45,21 @@ class DepartamentosController extends Controller
     {
         $request->validate([
             'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
         ]);
 
         $departamento = Department::create([
             'name'              =>  $request['name'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Departamento creado con éxito');
+        Alert::success('Éxito', 'Registro creado con éxito');
         return redirect()->route('departamentos.index');
     }
 
@@ -66,7 +73,7 @@ class DepartamentosController extends Controller
      */
     public function show($id)
     {
-        $departamento = Department::with('users')->findOrFail($id);
+        $departamento = Department::findOrFail($id);
         
         return view('Departamentos.ver',get_defined_vars());
     }
@@ -98,15 +105,23 @@ class DepartamentosController extends Controller
     {
         $request->validate([
             'name'          =>  'required|max:255',
+            'description'   =>  'required|max:255',
+            //'location'      =>  'required|max:255',
+            'total_cost'    =>  ['required', 'regex:/^(?:[1-9]\d+|\d)(?:\.\d?\d)?$/m'],
         ]);
 
         $departamento = Department::findOrFail($id);
 
         $departamento->update([
             'name'              =>  $request['body'],
+            'description'       =>  $request['description'],
+            //'location'          =>  $request['location'],
+            'total_cost'        =>  $request['total_cost'],
+            //'views_counter'     =>  $request['views_counter'],
+            'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Departamento actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('departamentos.index');
     }
 
@@ -122,7 +137,7 @@ class DepartamentosController extends Controller
     {
         $departamento = Department::findOrFail($id);
         $departamento->delete();
-        Alert::success('Éxito', 'Departamento eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('departamentos.index');
     }
 }

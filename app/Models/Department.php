@@ -16,6 +16,10 @@ class Department extends Model
      */
     protected $fillable = [
         'name',
+        'description',
+        'total_cost',
+        //'views_counter',
+        'user_id',
     ];
 
     /**
@@ -37,7 +41,7 @@ class Department extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users(){
-        return $this->belongsToMany('App\Models\User', 'user_department');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
     }
 }
