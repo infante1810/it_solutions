@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Announcement;
 use RealRashid\SweetAlert\Facades\Alert;
+//AGREGAR use PDF para que jale el pdf
+use PDF;
 
 class AnunciosController extends Controller
 {
@@ -144,5 +146,19 @@ class AnunciosController extends Controller
         $anuncio->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro1.index');
+    }
+    //copiar este metodo en todos pero con su respectivo Modelo
+    public function generatePDF()
+    {
+        $variables = Announcement::with('user')->get();
+        //especificar area en variable title
+        $title= "AREA 1";
+        $total=0;
+        foreach ($variables as $variable) {
+            $total+=$variable->total_cost;
+        }
+        $pdf = PDF::loadView('testPDF', get_defined_vars());
+     
+        return $pdf->download('ReporteDeArea.pdf');
     }
 }
