@@ -47,7 +47,7 @@ class RespuestasController extends Controller
             'user_id'           =>  1,
         ]);
 
-        return redirect()->route('preguntas.index');
+        return redirect()->route('registro8.index');
     }
 
     /**

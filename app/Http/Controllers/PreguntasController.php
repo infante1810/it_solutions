@@ -56,7 +56,7 @@ class PreguntasController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro creado con éxito');
-        return redirect()->route('preguntas.index');
+        return redirect()->route('registro8.index');
     }
 
     /**
@@ -112,7 +112,7 @@ class PreguntasController extends Controller
         ]);
 
         Alert::success('Éxito', 'Registro actualizado con éxito');
-        return redirect()->route('preguntas.index');
+        return redirect()->route('registro8.index');
     }
 
     /**
@@ -126,6 +126,6 @@ class PreguntasController extends Controller
         $pregunta = Question::findOrFail($id);
         $pregunta->delete();
         Alert::success('Éxito', 'Registro eliminado con éxito');
-        return redirect()->route('preguntas.index');
+        return redirect()->route('registro8.index');
     }
 }

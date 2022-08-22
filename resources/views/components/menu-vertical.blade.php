@@ -38,7 +38,7 @@
 
 
             <li class="slide">
-				<a class="side-menu__item {{ Request::is('comentarios') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro4.index')}}" id="comentarios">
+				<a class="side-menu__item {{ Request::is('registro4') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro4.index')}}" id="comentarios">
 					<i class="fa-solid fa-comment mr-2"></i>
 					<span class="side-menu__label">Area 4</span>
 				</a>
@@ -89,7 +89,7 @@
 			
 
 			<li class="slide">
-				<a class="side-menu__item {{ Request::is('preguntas') ? 'active' : '' }}" data-toggle="slide" href="{{route('preguntas.index')}}" id="preguntas">
+				<a class="side-menu__item {{ Request::is('preguntas') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro8.index')}}" id="preguntas">
 					<i class="fa-solid fa-circle-question mr-2"></i>
 					<span class="side-menu__label">Area 8</span>
 				</a>

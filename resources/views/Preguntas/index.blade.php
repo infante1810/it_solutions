@@ -13,7 +13,7 @@
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{route('preguntas.create')}}" class="btn btn-primary mr-3">
+                <a href="{{route('registro8.create')}}" class="btn btn-primary mr-3">
                     <i class="fa-solid fa-plus"></i>
                     Agregar Registro
                 </a>
@@ -64,9 +64,9 @@
                                 </td> 
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{route('preguntas.show',$pregunta->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
-                                        <a href="{{route('preguntas.edit',$pregunta->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
-                                        <form action="{{route('preguntas.destroy', $pregunta->id)}}" method="post">
+                                        <a href="{{route('registro8.show',$pregunta->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('registro8.edit',$pregunta->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
+                                        <form action="{{route('registro8.destroy', $pregunta->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
