@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Agregar departamento</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ url()->previous() }}">Departamentos</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route ('departamentos.index') }}">Departamentos</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Agregar departamento</li>
         </ul>
@@ -24,20 +24,16 @@
         <div class='row'>
             <div class="col-xl-12 col-md-12 col-lg-12">
                 <div class="card">
-                    <form>
+                    <form action="route('departamentos.index}}" method="PUT">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Nombre</label>
+                                        <label class="form-label">Nombree</label>
                                         <input class="form-control" type="text" placeholder="Ingresa el nombre del departamento" name="nombre" maxlength="22">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="form-label">Encargado</label>
-                                        <input class="form-control" type="text" placeholder="Ingresa nombre del encargado del departamento" name="apellidos" maxlength="30">
-                                    </div>
                                 </div>
                             </div>
                     
@@ -54,7 +50,7 @@
                                     <i class="feather feather-corner-down-left sidemenu_icon"></i>
                                     Cancelar
                                 </a>
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary"  id="enviar">
                                     <i class="feather  feather-save sidemenu_icon"></i>
                                     Guardar</button>
                                 </div>

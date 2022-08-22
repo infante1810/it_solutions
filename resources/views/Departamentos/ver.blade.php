@@ -30,11 +30,14 @@
 <div class="row">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
-            <div class="card-header  border-0">
-                <h4 class="card-title">Lista de empleados</h4>
-            </div>
+
             <div class="card-body">
-                <div class="table-responsive">
+                <h4 class="mb-5 font-weight-semibold">Lista de empleados</h4>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="form-label">Nombre</label>    
+                    
                     <table class="table  table-vcenter text-wrap table-bordered border-bottom dt" id="project-list">
                         <thead>
                             <tr>
