@@ -61,8 +61,8 @@ Route::middleware(['auth'])->group( function () {
     Route::resource('registro6', ContratosController::class);
     
     Route::get('/registro5/generatePDF', [DepartamentosController::class, 'generatePDF'])->name('registro5.generatePDF');
-    Route::resource('departamentos', DepartamentosController::class);
-    //Route::resource('registro5', DepartamentosController::class);
+    //Route::resource('departamentos', DepartamentosController::class);
+    Route::resource('registro5', DepartamentosController::class);
     
     Route::get('/registro7/generatePDF', [EventosController::class, 'generatePDF'])->name('registro7.generatePDF');
     Route::resource('registro7', EventosController::class);
