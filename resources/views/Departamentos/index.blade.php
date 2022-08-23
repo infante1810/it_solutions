@@ -2,111 +2,83 @@
 
 @section('content')
 
+
+<!--Page header-->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Departamentos s</h4>
+        <h4 class="page-title">Registros 5</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">
             <div class="btn-list">
-                <a href="{{ route('departamentos.create') }}" class="btn btn-primary mr-3">
-                    <i class="fa-solid fa-plus"></i>Agregar Departamento</a>
-            </div>
-        </div>
-    </div>
-
-                <!-- VENTANA EMERGENTE -->
-                <div class="modal fade" id="ventana1" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content" Style="border-radius: 20px;">
-                            <!-- HEADER DE LA VENTANA-->
-                            <div class="modal-header">
-                                <h2 class="modal-title" style="font-size: 20px; font-weight: bold;">Agregar un departamento</h2>
-                                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-
-                            <!-- CONTENIDO DE LA VENTANA-->
-                            <div class="row">
-                                <div class="col-xl-12 col-md-12 col-lg-12">
-                                    <div class="card">
-                                        <div class="card-header border-0">
-                                            <div class="table table-vcenter text-wrap table bordered">
-                                                <div class="form-group">
-                                                    <label for="name" class="form-label">Nombre del departamento</label>
-                                                    <input id="name" class="form-control @error('name')is-invalid @enderror" type="text" required
-                                                           placeholder="Ej. Departamento de Finanzas" name="name" maxlength="250"
-                                                           value="{{ old('name') }}">
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong> {{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary">
-					                        Guardar
-                                        </button>
-                                    </div>
-                                
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="{{route('departamentos.create')}}" class="btn btn-primary mr-3">
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar Registro
+                </a>
             </div>
         </div>
     </div>
 </div>
-
-
-
+<!--End Page header-->
 
 
 <!-- CONTENIDO -->
+
 <div class="row">
     <div class="col-xl-12 col-md-12 col-lg-12">
         <div class="card">
+            <div class="card-header  border-0">
+                <h4 class="card-title">Lista de productos/servicios</h4>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-vcenter table-hover">
+                    <table class="table table-vcenter text-wrap table-bordered border-bottom dt" id="tabla">
                         <thead>
                             <tr>
-                                <th class="text-center">Nombre</th>
-                                <th class="text-center">Acciones</th>
+                                <th class="border-bottom-0">ID</th>
+                                <th class="border-bottom-0">Servicio/Producto</th>
+                                <th class="border-bottom-0">Descripcion</th>
+                                <th class="border-bottom-0">Costos</th>
+                                <th class="border-bottom-0" Style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($departamentos as $departamento)
-                                <tr>
-                                    <td class="text-center">{{ $departamento->name }}</td>
-                                    <td class="text-center">
-                                        <a href="{{ route('departamentos.edit', $departamento->id) }}" class="btn btn-sm btn-primary">
-                                            <i class="fa-solid fa-pencil-alt"></i>
-                                        </a>
-                                        <form action="{{ route('departamentos.destroy', $departamento->id) }}" method="POST" style="display: inline-block;">
+                            <tr>
+                                <td>{{$departamento->id}}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <div class="mr-3 mt-0 mt-sm-1 d-block">
+                                            <h6 class="mb-1 fs-14">{{$departamento->name}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span>{{$departamento->description}}</span>
+                                </td>
+                                <td>
+                                    <span>{{$departamento->total_cost}}</span>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="{{route('departamentos.show',$departamento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa-solid fa-eye text-primary"></i></a>
+                                        <a href="{{route('departamentos.edit',$departamento->id)}}" class="action-btns1" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa-solid fa-pen text-success"></i></a>
+                                        <form action="{{route('departamentos.destroy', $departamento->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">
-                                                <i class="fa-solid fa-trash-alt"></i>
-                                            </button>
+                                            <button class="action-btns1" onclick="mensaje()" data-toggle="tooltip" data-placement="top" title="Eliminar" type="submit"><i class="fa-regular fa-trash-can text-danger"></i></button>
                                         </form>
-                                    </td>
-                                </tr>
+                                    </div>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
+
                     </table>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 <!-- FIN CONTENIDO -->
 @endsection
