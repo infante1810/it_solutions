@@ -152,6 +152,10 @@ class AnunciosController extends Controller
     {
         $variables = Announcement::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro1.index');
+        }
         $title= "AREA 1";
         $total=0;
         foreach ($variables as $variable) {

@@ -138,6 +138,10 @@ class ContratosController extends Controller
     {
         $variables = Contract::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro6.index');
+        }
         $title= "AREA 6";
         $total=0;
         foreach ($variables as $variable) {

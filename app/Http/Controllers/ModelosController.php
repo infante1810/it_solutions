@@ -131,6 +131,10 @@ class ModelosController extends Controller
     {
         $variables = Models::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro2.index');
+        }
         $title= "AREA 2";
         $total=0;
         foreach ($variables as $variable) {

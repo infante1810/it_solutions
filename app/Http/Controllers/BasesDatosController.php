@@ -117,7 +117,7 @@ class BasesDatosController extends Controller
             'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Anuncio actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('registro3.index');
     }
 
@@ -140,6 +140,10 @@ class BasesDatosController extends Controller
     {
         $variables = Database::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro3.index');
+        }
         $title= "AREA 3";
         $total=0;
         foreach ($variables as $variable) {

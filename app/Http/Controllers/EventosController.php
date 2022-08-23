@@ -56,7 +56,7 @@ class EventosController extends Controller
             //'start_date'     => $request['start_date'],
         ]);
 
-        Alert::success('Éxito', 'Evento guardado con éxito');
+        Alert::success('Éxito', 'Registro guardado con éxito');
         return redirect()->route('registro7.index');
     }
 
@@ -113,7 +113,7 @@ class EventosController extends Controller
             'user_id'           =>  $request['user_id'],
         ]);
 
-        Alert::success('Éxito', 'Evento actualizado con éxito');
+        Alert::success('Éxito', 'Registro actualizado con éxito');
         return redirect()->route('registro7.index');
     }
 
@@ -127,7 +127,7 @@ class EventosController extends Controller
     {
         $eventos = Event::findOrFail($id);
         $eventos->delete();
-        Alert::success('Éxito', 'Evento eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro7.index');
     }
 
@@ -136,6 +136,10 @@ class EventosController extends Controller
     {
         $variables = Event::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro7.index');
+        }
         $title= "AREA 7";
         $total=0;
         foreach ($variables as $variable) {

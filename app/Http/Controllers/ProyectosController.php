@@ -58,7 +58,7 @@ class ProyectosController extends Controller
         // $project->save();
 
 
-        Alert::success('Éxito', 'Proyecto guardado con éxito');
+        Alert::success('Éxito', 'Registro guardado con éxito');
         return redirect()->route('registro9.index');
     }
 
@@ -136,7 +136,7 @@ class ProyectosController extends Controller
         $project = Project::findOrFail($id);
 
         $project->delete();
-        Alert::success('Éxito', 'Proyecto eliminado con éxito');
+        Alert::success('Éxito', 'Registro eliminado con éxito');
         return redirect()->route('registro9.index');
     }
 
@@ -145,6 +145,10 @@ class ProyectosController extends Controller
     {
         $variables = Project::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro9.index');
+        }
         $title= "AREA 9";
         $total=0;
         foreach ($variables as $variable) {

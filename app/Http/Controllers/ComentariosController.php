@@ -158,6 +158,10 @@ class ComentariosController extends Controller
     {
         $variables = Comment::with('user')->get();
         //especificar area en variable title
+        if(empty($variables)){
+            Alert::error('Error', 'No hay registros para mostrar');
+            return redirect()->route('registro4.index');
+        }
         $title= "AREA 4";
         $total=0;
         foreach ($variables as $variable) {
