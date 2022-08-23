@@ -26,7 +26,11 @@
 
 
                 <div class="col-4 bg-white pb-8 pt-5 pr-5 pl-5">
+                    <div class="fw-bold  py-5">
+                        <img src="{{asset('images/logoExtendidoy.png')}}" alt="logo") style="width: 50%" class="mx-auto d-block">
+                    </div>    
                     <h2 class="fw-bold  py-5" style="text-align: center; ">Inicio de sesión</h2>
+                    
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
