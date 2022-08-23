@@ -126,7 +126,7 @@
                                 <div class="row fs-4 primary-font">INFANTE GONZALEZ </br> OSCAR ESTEBAN</div>
                                 <div class="row text-muted">2010008</div>
                                 <div class="row">2010008@upv.edu.mx</div>
-                                <div class="row">Owner Area 1</div>  
+                                <div class="row">Owner Area 1,2,3,6</div>  
                             </div>
                             
                         </div>

@@ -6,7 +6,7 @@
 <!--Page header-->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Registros 4</h4>
+        <h4 class="page-title">Registros Area 4</h4>
     </div>
     <div class="page-rightheader ml-md-auto">
         <div class="align-items-end flex-wrap my-auto right-content breadcrumb-right">

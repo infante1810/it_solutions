@@ -18,7 +18,7 @@
 
              <li class="slide">
 				<a class="side-menu__item {{ Request::is('registro1') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro1.index')}}" id="anuncios">
-					<i class="fa-brands fa-adversal mr-2"></i>
+				<i class="fa-solid fa-file-contract mr-2"></i>
 					<span class="side-menu__label">Area 1</span>
 				</a>
 			</li>
@@ -39,14 +39,14 @@
 
             <li class="slide">
 				<a class="side-menu__item {{ Request::is('registro4') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro4.index')}}" id="comentarios">
-					<i class="fa-solid fa-comment mr-2"></i>
+				<i class="fa-solid fa-file-contract mr-2"></i>
 					<span class="side-menu__label">Area 4</span>
 				</a>
 			</li>
 
 			<li class="slide">
-				<a class="side-menu__item {{ Request::is('departamentos') ? 'active' : '' }}" data-toggle="slide" href="{{route('departamentos.index')}}" id="departamentos">
-					<i class="fa-solid fa-address-card mr-2"></i>
+				<a class="side-menu__item {{ Request::is('registro5') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro5.index')}}" id="departamentos">
+					<i class="fa-solid fa-folder mr-2"></i>
 					<span class="side-menu__label">Area 5</span>
 				</a>
 			</li>
@@ -60,13 +60,13 @@
 
             <li class="slide">
 				<a class="side-menu__item {{ Request::is('registro6') ? 'active' : ''}}" data-toggle="slide" href="{{route('registro6.index')}}" id="contratos">
-					<i class="fa-solid fa-file-contract mr-2"></i>
+					<i class="fa-solid fa-database mr-2"></i>
 					<span class="side-menu__label">Area 6</span>
 				</a>
 			</li>
 
             <!-- <li class="slide">
-				<a class="side-menu__item {{ Request::is('departamentos') ? 'active' : '' }}" data-toggle="slide" href="{{route('departamentos.index')}}" id="departamentos">
+				<a class="side-menu__item {{ Request::is('departamentos') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro5.index')}}" id="departamentos">
 					<i class="fa-solid fa-address-card mr-2"></i>
 					<span class="side-menu__label">Area 6</span>
 				</a>
@@ -74,7 +74,7 @@
 
 			<li class="slide">
 				<a class="side-menu__item {{ Request::is('registro7') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro7.index')}}" id="eventos">
-					<i class="fa-solid fa-calendar-day mr-2"></i>
+					<i class="fa-solid fa-file-contract mr-2"></i>
 					<span class="side-menu__label">Area 7</span>
 				</a>
 			</li>
@@ -89,22 +89,22 @@
 			
 
 			<li class="slide">
-				<a class="side-menu__item {{ Request::is('preguntas') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro8.index')}}" id="preguntas">
-					<i class="fa-solid fa-circle-question mr-2"></i>
+				<a class="side-menu__item {{ Request::is('registro8') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro8.index')}}" id="preguntas">
+					<i class="fa-solid fa-folder mr-2"></i>
 					<span class="side-menu__label">Area 8</span>
 				</a>
 			</li>
 
 			<li class="slide">
 				<a class="side-menu__item {{ Request::is('registro9') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro9.index')}}" id="proyectos">
-					<i class="fa-solid fa-list-check mr-2"></i>
+					<i class="fa-solid fa-database mr-2"></i>
 					<span class="side-menu__label">Area 9</span>
 				</a>
 			</li>
 
 			<li class="slide">
 				<a class="side-menu__item {{ Request::is('registro10') ? 'active' : '' }}" data-toggle="slide" href="{{route('registro10.index')}}" id="riesgos">
-					<i class="fa-solid fa-triangle-exclamation mr-2"></i>
+				<i class="fa-solid fa-file-contract mr-2"></i>
 					<span class="side-menu__label">Area 10</span>
 				</a>
 			</li>

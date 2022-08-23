@@ -5,7 +5,7 @@
 <!-- CABECERA -->
 <div class="page-header d-xl-flex d-block">
     <div class="page-leftheader">
-        <h4 class="page-title">Registro 10</h4>
+        <h4 class="page-title">Registros Area 10</h4>
     </div>
 {{-- DESCOMENTAR DIV PARA MOSTRAR BOTON DE AGREGAR --}}
     <div class="page-rightheader ml-md-auto">

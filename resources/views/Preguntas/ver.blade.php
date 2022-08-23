@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Ver registro #{{$pregunta->id}}</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('registro8.index') }}">Registros 8</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro8.index') }}">Area8</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Ver registro</li>
         </ul>

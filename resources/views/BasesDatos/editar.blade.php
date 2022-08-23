@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Editar  registro</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('registro3.index') }}">Registro 3</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro3.index') }}">Area3</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Editar registro</li>
         </ul>

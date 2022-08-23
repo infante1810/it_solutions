@@ -7,7 +7,7 @@
     <div class="page-leftheader">
         <h4 class="page-title">Ver registro #{{$project->id}}</h4>
         <ul class="breadcrumb">
-            <li class="mb-1 fs-16"><a href="{{ route('registro9.index') }}">Registros 9</a></li>
+            <li class="mb-1 fs-16"><a href="{{ route('registro9.index') }}">Area9</a></li>
             <li class="text-muted mb-1 fs-16 ml-2 mr-2"> / </li>
             <li class="text-muted mb-1 fs-16">Ver registro</li>
         </ul>
@@ -24,7 +24,7 @@
     <div class="col-xl-3 col-md-12 col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="mb-5 font-weight-semibold">Registro9</h4>
+                <h4 class="mb-5 font-weight-semibold">Registro</h4>
 
 				<div class="row">
 					<div class="col-md-20">
